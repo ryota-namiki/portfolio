@@ -151,8 +151,96 @@ function portfolio_fade_in_script() {
 	</script>
 	<?php
 }
+
+/**
+ * アコーディオン機能用のJavaScriptを追加
+ */
+function portfolio_accordion_script() {
+	?>
+	<script>
+		(function() {
+			function initAccordion() {
+				const toggleButtons = document.querySelectorAll(".process-detail-toggle");
+				if (toggleButtons.length === 0) return;
+
+				toggleButtons.forEach((button) => {
+					button.addEventListener("click", function() {
+						const box = this.closest(".process-detail-box");
+						const content = box.querySelector(".process-detail-content");
+						const isActive = content.classList.contains("active");
+						
+						if (isActive) {
+							content.classList.remove("active");
+							button.classList.remove("active");
+						} else {
+							content.classList.add("active");
+							button.classList.add("active");
+						}
+					});
+				});
+			}
+
+			if (document.readyState === "loading") {
+				document.addEventListener("DOMContentLoaded", initAccordion);
+			} else {
+				initAccordion();
+			}
+		})();
+	</script>
+	<?php
+}
+
+/**
+ * プランタブ切り替え機能用のJavaScriptを追加
+ */
+function portfolio_plan_tabs_script() {
+	?>
+	<script>
+		(function() {
+			function initPlanTabs() {
+				const tabButtons = document.querySelectorAll(".plan-tab");
+				const planContainers = document.querySelectorAll(".plan-cards-container");
+				
+				if (tabButtons.length === 0 || planContainers.length === 0) return;
+
+				tabButtons.forEach((button) => {
+					button.addEventListener("click", function() {
+						const targetTab = this.getAttribute("data-tab");
+						
+						// すべてのタブからactiveクラスを削除
+						tabButtons.forEach((btn) => btn.classList.remove("active"));
+						// クリックされたタブにactiveクラスを追加
+						this.classList.add("active");
+						
+						// すべてのプランコンテナを非表示
+						planContainers.forEach((container) => {
+							container.style.display = "none";
+						});
+						
+						// 選択されたタブに対応するプランコンテナを表示
+						const targetContainer = document.querySelector(
+							`.plan-cards-container[data-plan-type="${targetTab}"]`
+						);
+						if (targetContainer) {
+							targetContainer.style.display = "flex";
+						}
+					});
+				});
+			}
+
+			if (document.readyState === "loading") {
+				document.addEventListener("DOMContentLoaded", initPlanTabs);
+			} else {
+				initPlanTabs();
+			}
+		})();
+	</script>
+	<?php
+}
 add_action( 'wp_enqueue_scripts', 'portfolio_enqueue_styles' );
 add_action( 'wp_footer', 'portfolio_fade_in_script' );
+add_action( 'wp_footer', 'portfolio_accordion_script' );
+add_action( 'wp_footer', 'portfolio_plan_tabs_script' );
 
 /**
  * FV画像ヘルパー関数を読み込み

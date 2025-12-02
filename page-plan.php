@@ -107,7 +107,8 @@ get_header();
             <button class="plan-tab" data-tab="hp">HP制作</button>
           </div>
 
-          <div class="plan-cards-container">
+          <!-- LP制作プラン -->
+          <div class="plan-cards-container" data-plan-type="lp">
             <div class="plan-card-item fade-in">
               <div class="plan-card-header">
                 <p class="plan-card-label">Light</p>
@@ -175,6 +176,93 @@ get_header();
                 <div class="plan-detail-row">
                   <span class="plan-detail-label">制作期間</span>
                   <span class="plan-detail-value">1ヶ月〜2ヶ月</span>
+                </div>
+                <div class="plan-detail-row">
+                  <span class="plan-detail-label">修正回数</span>
+                  <span class="plan-detail-value">完了2週間前まで無制限</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- HP制作プラン -->
+          <div class="plan-cards-container" data-plan-type="hp" style="display: none;">
+            <div class="plan-card-item fade-in">
+              <div class="plan-card-header">
+                <p class="plan-card-label">Light</p>
+                <h3 class="plan-card-title">ライト</h3>
+              </div>
+              <div class="plan-card-description">
+                <p>気軽に作りたい、小規模なビジネスを始めた方におすすめ。</p>
+              </div>
+              <div class="plan-card-details">
+                <div class="plan-detail-row">
+                  <span class="plan-detail-label">料金</span>
+                  <span class="plan-detail-value">30万円(税別)</span>
+                </div>
+                <div class="plan-detail-row">
+                  <span class="plan-detail-label">ページ数</span>
+                  <span class="plan-detail-value">3〜5ページ</span>
+                </div>
+                <div class="plan-detail-row">
+                  <span class="plan-detail-label">制作期間</span>
+                  <span class="plan-detail-value">1ヶ月</span>
+                </div>
+                <div class="plan-detail-row">
+                  <span class="plan-detail-label">修正回数</span>
+                  <span class="plan-detail-value">制作期間中2回まで</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="plan-card-item plan-card-featured fade-in">
+              <div class="plan-card-header">
+                <p class="plan-card-label">Standard</p>
+                <h3 class="plan-card-title">スタンダード</h3>
+              </div>
+              <div class="plan-card-description">
+                <p>基本的なページが揃ったサイトがいち早く欲しい方におすすめ。</p>
+              </div>
+              <div class="plan-card-details">
+                <div class="plan-detail-row">
+                  <span class="plan-detail-label">料金</span>
+                  <span class="plan-detail-value">50万円(税別)</span>
+                </div>
+                <div class="plan-detail-row">
+                  <span class="plan-detail-label">ページ数</span>
+                  <span class="plan-detail-value">5〜10ページ</span>
+                </div>
+                <div class="plan-detail-row">
+                  <span class="plan-detail-label">制作期間</span>
+                  <span class="plan-detail-value">2ヶ月</span>
+                </div>
+                <div class="plan-detail-row">
+                  <span class="plan-detail-label">修正回数</span>
+                  <span class="plan-detail-value">制作期間中2回まで</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="plan-card-item fade-in">
+              <div class="plan-card-header">
+                <p class="plan-card-label">Pro</p>
+                <h3 class="plan-card-title">プロ</h3>
+              </div>
+              <div class="plan-card-description">
+                <p>ボリューム感あるサイトが欲しい方<br>　</p>
+              </div>
+              <div class="plan-card-details">
+                <div class="plan-detail-row">
+                  <span class="plan-detail-label">料金</span>
+                  <span class="plan-detail-value">100万円(税別)</span>
+                </div>
+                <div class="plan-detail-row">
+                  <span class="plan-detail-label">ページ数</span>
+                  <span class="plan-detail-value">10ページ〜</span>
+                </div>
+                <div class="plan-detail-row">
+                  <span class="plan-detail-label">制作期間</span>
+                  <span class="plan-detail-value">2ヶ月以上</span>
                 </div>
                 <div class="plan-detail-row">
                   <span class="plan-detail-label">修正回数</span>
