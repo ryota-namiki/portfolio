@@ -1807,3 +1807,499 @@ Project Detail Page
     line-height: 20px;
   }
 }
+
+/* ============================================
+Plan Page
+============================================ */
+.plan-fv-section {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 70vh;
+  overflow: hidden;
+  opacity: 0.7;
+  z-index: 1;
+}
+
+.plan-fv-background {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.plan-fv-bg-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.plan-fv-overlay {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background: linear-gradient(to right, #ffffff, transparent);
+}
+
+.plan-content-inner {
+  padding: 120px 16px 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+}
+
+/* Plan Intro Section */
+.plan-intro-section {
+  width: 100%;
+}
+
+.plan-intro-content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 1030px;
+  margin: 0 auto;
+}
+
+.plan-intro-title {
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro", sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 34px;
+  letter-spacing: 0.38px;
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin: 0;
+}
+
+.plan-intro-text {
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 21px;
+  letter-spacing: -0.31px;
+  color: #333333;
+  margin: 0;
+}
+
+/* Service Cards Section */
+.plan-service-section {
+  width: 100%;
+}
+
+.service-cards {
+  display: flex;
+  gap: 24px;
+  max-width: 1030px;
+  margin: 0 auto;
+}
+
+.service-card {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.service-image {
+  width: 100%;
+  aspect-ratio: 312 / 171;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.service-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.service-content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
+  text-align: center;
+}
+
+.service-title {
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro", sans-serif;
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 28px;
+  letter-spacing: -0.26px;
+  color: #333333;
+  margin: 0;
+}
+
+.service-description {
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro", sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: -0.23px;
+  color: #333333;
+  margin: 0;
+}
+
+/* Plan Cards Section */
+.plan-cards-section {
+  width: 100%;
+}
+
+.plan-tabs {
+  display: flex;
+  gap: 0;
+  max-width: 678px;
+  margin: 0 auto 24px;
+  background-color: rgba(118, 118, 128, 0.12);
+  border-radius: 100px;
+  padding: 4px 8px;
+}
+
+.plan-tab {
+  flex: 1;
+  padding: 2px 10px;
+  background: none;
+  border: none;
+  border-radius: 7px;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 18px;
+  letter-spacing: -0.08px;
+  color: #000000;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.plan-tab.active {
+  font-weight: 600;
+  color: #ffffff;
+  background: var(--gradient-primary);
+  box-shadow: 0px 2px 20px 0px rgba(0, 0, 0, 0.06);
+}
+
+.plan-cards-container {
+  display: flex;
+  gap: 16px;
+  max-width: 1030px;
+  margin: 0 auto 40px;
+}
+
+.plan-card-item {
+  flex: 1;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 15px;
+  padding: 40px 16px;
+  box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  align-items: center;
+}
+
+.plan-card-item.plan-card-featured {
+  border: 2px solid #01a0d5;
+  padding: 40px 24px;
+}
+
+.plan-card-header {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  align-items: center;
+  width: 100%;
+}
+
+.plan-card-label {
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro", sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+  letter-spacing: 0;
+  color: #333333;
+  margin: 0;
+}
+
+.plan-card-title {
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro", sans-serif;
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 22px;
+  letter-spacing: -0.43px;
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin: 0;
+}
+
+.plan-card-details {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  width: 100%;
+  align-items: flex-start;
+}
+
+.plan-detail-row {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  width: 100%;
+}
+
+.plan-detail-label {
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro", sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: -0.23px;
+  color: #333333;
+  width: 60px;
+  flex-shrink: 0;
+}
+
+.plan-detail-value {
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro", sans-serif;
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 22px;
+  letter-spacing: -0.43px;
+  color: #333333;
+  text-align: center;
+}
+
+.plan-cta {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 326px;
+  margin: 0 auto;
+}
+
+/* Plan Process Section */
+.plan-process-section {
+  width: 100%;
+}
+
+.process-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  max-width: 1030px;
+  margin: 0 auto;
+}
+
+.process-step {
+  display: flex;
+  gap: 16px;
+  padding: 24px 0;
+  border-bottom: 0.5px solid #999999;
+}
+
+.process-step:last-child {
+  border-bottom: none;
+}
+
+.step-number {
+  font-family: "Poiret One", cursive, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0;
+  color: #222222;
+  width: 33.118px;
+  flex-shrink: 0;
+}
+
+.step-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.step-title {
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro", sans-serif;
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 22px;
+  letter-spacing: -0.43px;
+  color: #333333;
+  margin: 0;
+}
+
+.step-description-box {
+  background-color: #dee8fc;
+  border-radius: 8px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.step-description-box p {
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro", sans-serif;
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 22px;
+  letter-spacing: -0.43px;
+  color: #333333;
+  margin: 0;
+}
+
+.step-note {
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro", sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+  letter-spacing: 0;
+  color: #333333;
+  margin: 0;
+}
+
+.process-detail-box {
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 16px;
+  margin-top: 8px;
+}
+
+.process-detail-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.process-detail-title {
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro", sans-serif;
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 22px;
+  letter-spacing: -0.43px;
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin: 0;
+  flex: 1;
+}
+
+.process-detail-toggle {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.process-detail-content {
+  display: none;
+  flex-direction: column;
+  padding-top: 24px;
+}
+
+.process-detail-content.active {
+  display: flex;
+}
+
+.process-detail-item {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 24px 0;
+  border-bottom: 0.5px solid #999999;
+}
+
+.process-detail-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.process-detail-item-title {
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro", sans-serif;
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 22px;
+  letter-spacing: -0.43px;
+  color: #333333;
+  margin: 0;
+}
+
+.process-detail-item-text {
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 21px;
+  letter-spacing: -0.31px;
+  color: #333333;
+  margin: 0;
+}
+
+/* Plan Page Responsive */
+@media (max-width: 1024px) {
+  .service-cards {
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .plan-cards-container {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 768px) {
+  .plan-fv-section {
+    height: 400px;
+  }
+
+  .plan-content-inner {
+    padding: 60px 16px;
+    gap: 60px;
+  }
+
+  .plan-intro-title {
+    font-size: 24px;
+    line-height: 32px;
+  }
+
+  .service-cards {
+    gap: 24px;
+  }
+
+  .plan-tabs {
+    max-width: 100%;
+  }
+
+  .plan-cards-container {
+    gap: 24px;
+  }
+
+  .plan-card-item {
+    padding: 32px 16px;
+  }
+
+  .plan-card-item.plan-card-featured {
+    padding: 32px 16px;
+  }
+}

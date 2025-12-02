@@ -126,7 +126,7 @@ get_header();
               ホームページやLPを、一貫したブランドイメージでサポート。貴社の強みを活かす戦略的なデザインで、大手にも負けない存在感を創り出します。詳しい料金と内容は、制作プランをご覧ください。
             </p>
           </div>
-          <a href="<?php echo esc_url( get_permalink( get_page_by_path( 'plan' ) ) ); ?>" class="cta-button">
+          <a href="<?php echo esc_url( home_url( '/plan/' ) ); ?>" class="cta-button">
             <span>制作プランを見る</span>
             <svg class="icon-arrow" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -144,8 +144,8 @@ get_header();
               クライアントの想いや課題を深く掘り下げ、UI/UXの視点から"伝わるデザイン"を構築するだけでなく、柔軟なコミュニケーションを大切にし、プロジェクト全体を俯瞰しながら最適な形で伴走いたします。
             </p>
           </div>
-          <a href="<?php echo esc_url( get_permalink( get_page_by_path( 'plan' ) ) ); ?>" class="cta-button">
-            <span>制作プランを見る</span>
+          <a href="<?php echo esc_url( home_url( '/skills/' ) ); ?>" class="cta-button">
+            <span>スキル・経歴を見る</span>
             <svg class="icon-arrow" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
