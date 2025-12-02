@@ -8,10 +8,10 @@
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
-	<meta charset="<?php bloginfo( 'charset' ); ?>">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="profile" href="https://gmpg.org/xfn/11">
-	<?php wp_head(); ?>
+  <meta charset="<?php bloginfo( 'charset' ); ?>">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="profile" href="https://gmpg.org/xfn/11">
+  <?php wp_head(); ?>
 </head>
 
 <body <?php body_class(); ?>>
@@ -28,38 +28,38 @@
 </svg>
 
 <div id="page" class="site">
-	<header id="masthead" class="site-header">
-		<nav class="navbar">
-			<div class="navbar-container">
-				<div class="site-branding">
-					<h1 class="site-title">
-						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-							<?php bloginfo( 'name' ); ?>
-						</a>
-					</h1>
-				</div>
-				<div class="navbar-actions">
-					<div class="navbar-buttons">
-						<a href="<?php echo esc_url( get_post_type_archive_link( 'project' ) ); ?>" class="navbar-btn navbar-btn-dark">
-							<?php esc_html_e( '制作実績', 'portfolio' ); ?>
-						</a>
-						<a href="<?php echo esc_url( get_permalink( get_page_by_path( 'contact' ) ) ); ?>" class="navbar-btn navbar-btn-gradient">
-							<?php esc_html_e( 'お問い合わせ', 'portfolio' ); ?>
-						</a>
-					</div>
-					<div class="navbar-menu-toggle">
-						<span class="menu-text"><?php esc_html_e( 'Menu', 'portfolio' ); ?></span>
-						<button class="menu-icon-btn" aria-label="<?php esc_attr_e( 'Toggle menu', 'portfolio' ); ?>">
-							<svg class="menu-icon" width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-								<path d="M8 12H32M8 20H32M8 28H32" stroke="#333333" stroke-width="2" stroke-linecap="round"/>
-							</svg>
-						</button>
-					</div>
-				</div>
-			</div>
-		</nav>
-	</header>
+  <header id="masthead" class="site-header">
+    <nav class="navbar">
+      <div class="navbar-container">
+        <div class="site-branding">
+          <h1 class="site-title">
+            <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+              <?php bloginfo( 'name' ); ?>
+            </a>
+          </h1>
+        </div>
+        <div class="navbar-actions">
+          <div class="navbar-buttons">
+            <a href="<?php echo esc_url( get_post_type_archive_link( 'project' ) ); ?>" class="navbar-btn navbar-btn-dark">
+              <?php esc_html_e( '制作実績', 'portfolio' ); ?>
+            </a>
+            <a href="<?php echo esc_url( get_permalink( get_page_by_path( 'contact' ) ) ); ?>" class="navbar-btn navbar-btn-gradient">
+              <?php esc_html_e( 'お問い合わせ', 'portfolio' ); ?>
+            </a>
+          </div>
+          <div class="navbar-menu-toggle">
+            <span class="menu-text"><?php esc_html_e( 'Menu', 'portfolio' ); ?></span>
+            <button class="menu-icon-btn" aria-label="<?php esc_attr_e( 'Toggle menu', 'portfolio' ); ?>">
+              <svg class="menu-icon" width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M8 12H32M8 20H32M8 28H32" stroke="#333333" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
 
-	<div id="content" class="site-content">
+  <div id="content" class="site-content">
 
 

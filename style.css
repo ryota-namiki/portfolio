@@ -544,7 +544,15 @@ Buttons
 }
 
 .cta-button-back:hover {
-  background: #f5f5f5;
+  background: #ffffff;
+  color: #777777;
+  border-color: #777777;
+}
+
+.cta-button-back:hover .icon-arrow-left,
+.cta-button-back:hover .icon-arrow-left path {
+  color: #777777;
+  stroke: #777777;
 }
 
 .icon-arrow-left {
@@ -2112,6 +2120,31 @@ Plan Page
   align-items: center;
   max-width: 326px;
   margin: 0 auto;
+}
+
+.plan-cta .plan-price-button {
+  background: #ffffff;
+  color: #333333;
+  border: 1px solid #333333;
+  padding: 9px 16px 9px 48px;
+}
+
+.plan-cta .plan-price-button:hover {
+  background: #ffffff;
+  color: #777777;
+  border-color: #777777;
+}
+
+.plan-cta .plan-price-button:hover .icon-arrow,
+.plan-cta .plan-price-button:hover .icon-arrow path {
+  color: #777777;
+  stroke: #777777;
+}
+
+.plan-cta .plan-price-button .icon-arrow,
+.plan-cta .plan-price-button .icon-arrow path {
+  color: #333333;
+  stroke: #333333;
 }
 
 /* Plan Process Section */

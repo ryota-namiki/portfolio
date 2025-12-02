@@ -273,7 +273,7 @@ get_header();
           </div>
 
           <div class="plan-cta">
-            <a href="#" class="cta-button">
+            <a href="https://ryotanamiki-design-price.notion.site/296b38bbbfbf80bb81adf6a2cece970c?source=copy_link" class="cta-button plan-price-button" target="_blank" rel="noopener noreferrer">
               <span>詳しい料金はこちら</span>
               <svg class="icon-arrow" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>

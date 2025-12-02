@@ -274,14 +274,6 @@ $project_tags = get_field( 'タグ' ); // 複数選択フィールドまたは�
             </div>
           </div>
 
-          <!-- Back Button -->
-          <a href="<?php echo esc_url( get_post_type_archive_link( 'project' ) ); ?>" class="cta-button cta-button-back">
-            <svg class="icon-arrow icon-arrow-left" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-            <span>戻る</span>
-          </a>
-
           <?php 
           // デバッグ情報（開発中のみ表示）
           if ( defined( 'WP_DEBUG' ) && WP_DEBUG ) {
@@ -290,6 +282,14 @@ $project_tags = get_field( 'タグ' ); // 複数選択フィールドまたは�
           if ( $project_annotation ) : ?>
             <p class="project-detail-note"><?php echo esc_html( $project_annotation ); ?></p>
           <?php endif; ?>
+
+          <!-- Back Button -->
+          <a href="<?php echo esc_url( get_post_type_archive_link( 'project' ) ); ?>" class="cta-button cta-button-back">
+            <svg class="icon-arrow icon-arrow-left" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span>戻る</span>
+          </a>
         </div>
       </section>
     <?php endif; ?>
