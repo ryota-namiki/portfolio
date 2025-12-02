@@ -31,6 +31,10 @@ get_header();
       ?>
       <div class="plan-fv-overlay"></div>
     </div>
+    <div class="plan-fv-content">
+      <p class="plan-fv-label">WEBサイト、LP制作をご希望の</p>
+      <h2 class="plan-fv-subtitle">中小企業様へ</h2>
+    </div>
   </section>
 
   <!-- Main Content Wrapper -->
@@ -435,9 +439,9 @@ get_header();
           </div>
         </div>
       </section>
-
-      <?php get_template_part( 'template-parts/contact-section' ); ?>
     </div>
+
+    <?php get_template_part( 'template-parts/contact-section' ); ?>
   </div>
 </main>
 

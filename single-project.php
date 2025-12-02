@@ -76,7 +76,7 @@ $project_tags = get_field( 'タグ' ); // 複数選択フィールドまたは�
   </section>
 
   <!-- Main Content Wrapper -->
-  <div class="main-content-wrapper">
+  <div class="main-content-wrapper project-detail-main-content">
     <div class="project-detail-content-inner">
       <!-- Project Detail Info Section -->
       <section class="project-detail-info-section">

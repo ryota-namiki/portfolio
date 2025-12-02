@@ -1092,7 +1092,7 @@ Responsive Design
   }
 
   .main-content-wrapper {
-    margin-top: 20vh;
+    margin-top: 15vh;
   }
 
   .site-content {
@@ -1530,6 +1530,27 @@ Project Detail Page
   z-index: 2;
 }
 
+.project-detail-fv-label {
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 21px;
+  letter-spacing: -0.31px;
+  color: #333;
+  margin: 0 0 16px 0;
+}
+
+.project-detail-fv-subtitle {
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro", sans-serif;
+  font-size: 34px;
+  font-weight: 700;
+  line-height: 41px;
+  letter-spacing: 0.4px;
+  color: #333333;
+  text-shadow: 2px 2px 16px rgba(255, 255, 255, 0.5);
+  margin: 0 0 16px 0;
+}
+
 .project-detail-fv-title {
   font-family: -apple-system, BlinkMacSystemFont, "SF Pro", sans-serif;
   font-size: 34px;
@@ -1763,6 +1784,16 @@ Project Detail Page
     top: 120px;
   }
 
+  .project-detail-fv-label {
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  .project-detail-fv-subtitle {
+    font-size: 28px;
+    line-height: 36px;
+  }
+
   .project-detail-fv-title {
     font-size: 28px;
     line-height: 36px;
@@ -1794,8 +1825,9 @@ Project Detail Page
     gap: 32px;
   }
 
-  .main-content-wrapper {
-    margin-top: 30vh;
+  /* 実績詳細ページ専用 */
+  .project-detail-main-content {
+    margin-top: 28vh;
   }
 }
 
@@ -1803,6 +1835,31 @@ Project Detail Page
   .project-detail-fv-content {
     left: 16px;
     top: 140px;
+  }
+
+  .project-detail-fv-label {
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  .project-detail-fv-subtitle {
+    font-size: 24px;
+    line-height: 32px;
+  }
+
+  .plan-fv-content {
+    left: 16px;
+    top: 140px;
+  }
+
+  .plan-fv-label {
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  .plan-fv-subtitle {
+    font-size: 24px;
+    line-height: 32px;
   }
 
   .project-detail-fv-title {
@@ -1855,6 +1912,37 @@ Plan Page
   height: 100%;
   z-index: 1;
   background: linear-gradient(to right, #ffffff, transparent);
+}
+
+.plan-fv-content {
+  position: absolute;
+  left: 205px;
+  top: 201px;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.plan-fv-label {
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 21px;
+  letter-spacing: -0.31px;
+  color: #333;
+  margin: 0 0 16px 0;
+}
+
+.plan-fv-subtitle {
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro", sans-serif;
+  font-size: 34px;
+  font-weight: 700;
+  line-height: 41px;
+  letter-spacing: 0.4px;
+  color: #333333;
+  text-shadow: 2px 2px 16px rgba(255, 255, 255, 0.5);
+  margin: 0;
 }
 
 .plan-content-inner {
@@ -2335,6 +2423,21 @@ Plan Page
 @media (max-width: 768px) {
   .plan-fv-section {
     height: 400px;
+  }
+
+  .plan-fv-content {
+    left: 16px;
+    top: 120px;
+  }
+
+  .plan-fv-label {
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  .plan-fv-subtitle {
+    font-size: 28px;
+    line-height: 36px;
   }
 
   .plan-content-inner {
