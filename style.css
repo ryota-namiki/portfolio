@@ -3007,3 +3007,394 @@ Skills Page
     padding: 32px 16px;
   }
 }
+
+/* ============================================
+Contact Page
+============================================ */
+.contact-fv-section {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 70vh;
+  overflow: hidden;
+  opacity: 0.7;
+  z-index: 1;
+}
+
+.contact-fv-background {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.contact-fv-bg-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.contact-fv-overlay {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background: linear-gradient(to right, #ffffff, transparent);
+}
+
+.contact-fv-content {
+  position: absolute;
+  left: 205px;
+  top: 201px;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.contact-fv-label {
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 21px;
+  letter-spacing: -0.31px;
+  color: #333;
+  margin: 0 0 16px 0;
+}
+
+.contact-fv-subtitle {
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro", sans-serif;
+  font-size: 34px;
+  font-weight: 700;
+  line-height: 41px;
+  letter-spacing: 0.4px;
+  color: #333333;
+  text-shadow: 2px 2px 16px rgba(255, 255, 255, 0.5);
+  margin: 0;
+}
+
+.contact-content-inner {
+  padding: 120px 16px 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+  max-width: 1030px;
+  margin: 0 auto;
+}
+
+.contact-line-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contact-line-section .section-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 64px;
+}
+
+.contact-line-icon {
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.contact-line-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.contact-line-text {
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro", sans-serif;
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 22px;
+  letter-spacing: -0.43px;
+  color: #333333;
+  margin: 0;
+  text-align: center;
+}
+
+.contact-form-section {
+  width: 100%;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  max-width: 1030px;
+  margin: 0 auto;
+}
+
+.contact-form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+}
+
+.contact-form-label {
+  display: flex;
+  gap: 2px;
+  align-items: flex-start;
+}
+
+.contact-form-label-text {
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro", sans-serif;
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 22px;
+  letter-spacing: -0.43px;
+  color: #333333;
+}
+
+.contact-form-required {
+  font-size: 10px;
+  color: #333333;
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  line-height: 1;
+}
+
+.contact-form-input,
+.contact-form-textarea {
+  width: 100%;
+  padding: 24px;
+  border: 1px solid #999999;
+  border-radius: 8px;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro", sans-serif;
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 22px;
+  letter-spacing: -0.43px;
+  color: #333333;
+  background-color: #ffffff;
+  transition: border-color 0.3s ease;
+}
+
+.contact-form-input:focus,
+.contact-form-textarea:focus {
+  outline: none;
+  border-color: #156ad1;
+}
+
+.contact-form-input-focus {
+  border-color: #156ad1;
+}
+
+.contact-form-input::placeholder,
+.contact-form-textarea::placeholder {
+  color: #999999;
+}
+
+.contact-form-textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.contact-form-radio-group {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.contact-form-radio {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  cursor: pointer;
+}
+
+.contact-form-radio input[type="radio"] {
+  width: 24px;
+  height: 24px;
+  margin: 0;
+  cursor: pointer;
+  appearance: none;
+  border: 2px solid #999999;
+  border-radius: 50%;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.contact-form-radio input[type="radio"]:checked {
+  border-color: #156ad1;
+}
+
+.contact-form-radio input[type="radio"]:checked::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #156ad1;
+}
+
+.contact-form-radio-label {
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 21px;
+  letter-spacing: -0.31px;
+  color: #333333;
+}
+
+.contact-form-checkbox {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  cursor: pointer;
+  justify-content: center;
+  width: 100%;
+}
+
+.contact-form-checkbox input[type="checkbox"] {
+  width: 24px;
+  height: 24px;
+  margin: 0;
+  cursor: pointer;
+  appearance: none;
+  border: 2px solid #999999;
+  border-radius: 4px;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.contact-form-checkbox input[type="checkbox"]:checked {
+  border-color: #156ad1;
+  background-color: #156ad1;
+}
+
+.contact-form-checkbox input[type="checkbox"]:checked::after {
+  content: '✓';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.contact-form-checkbox-label {
+  font-family: "Hiragino Kaku Gothic ProN", sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.6;
+  letter-spacing: 0.192px;
+  color: #14212b;
+}
+
+.contact-form-checkbox-link {
+  color: #156ad1;
+  text-decoration: underline;
+}
+
+.contact-form-submit {
+  display: flex;
+  justify-content: center;
+  margin-top: 16px;
+}
+
+.contact-submit-button {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 9px 16px 9px 48px;
+  background: var(--gradient-primary);
+  color: #ffffff;
+  border-radius: 999px;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 21px;
+  letter-spacing: -0.31px;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+  white-space: nowrap;
+  width: 100%;
+  max-width: 376px;
+}
+
+.contact-submit-button:hover {
+  background: var(--gra-hover, linear-gradient(288deg, #DEE8FC 0%, #BDD1F8 100%));
+}
+
+.contact-submit-button .icon-arrow {
+  width: 24px;
+  height: 24px;
+}
+
+/* Contact Page Responsive */
+@media (max-width: 768px) {
+  .contact-fv-section {
+    height: 400px;
+  }
+
+  .contact-fv-content {
+    left: 16px;
+    top: 120px;
+  }
+
+  .contact-fv-label {
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  .contact-fv-subtitle {
+    font-size: 28px;
+    line-height: 36px;
+  }
+
+  .contact-content-inner {
+    padding: 60px 16px 0;
+    gap: 40px;
+  }
+
+  .contact-line-icon {
+    width: 80px;
+    height: 80px;
+  }
+
+  .contact-form {
+    gap: 20px;
+  }
+
+  .contact-form-field {
+    gap: 12px;
+  }
+
+  .contact-form-radio-group {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .contact-submit-button {
+    min-width: 100%;
+    width: 100%;
+  }
+}

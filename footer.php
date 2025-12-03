@@ -28,7 +28,7 @@
               <a href="<?php echo esc_url( get_post_type_archive_link( 'project' ) ); ?>" class="footer-nav-link">
                 <span class="footer-nav-title">制作実績</span>
               </a>
-              <a href="<?php echo esc_url( get_permalink( get_page_by_path( 'contact' ) ) ); ?>" class="footer-nav-link">
+              <a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>" class="footer-nav-link">
                 <span class="footer-nav-title">お問い合わせ</span>
               </a>
             </div>
@@ -37,7 +37,7 @@
                 <span class="footer-nav-label">ホームページ制作 / LP制作をご希望の</span>
                 <span class="footer-nav-title">中小企業の経営者の方へ</span>
               </a>
-              <a href="<?php echo esc_url( home_url( '/plan/' ) ); ?>" class="footer-nav-link">
+              <a href="<?php echo esc_url( home_url( '/skills/' ) ); ?>" class="footer-nav-link">
                 <span class="footer-nav-label">提携できるデザイナーをお探しの</span>
                 <span class="footer-nav-title">制作会社、マーケティング事業の方へ</span>
               </a>
