@@ -2453,6 +2453,447 @@ Plan Page
   .service-cards {
     gap: 24px;
   }
+}
+
+/* ============================================
+Skills Page
+============================================ */
+.skills-fv-section {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 70vh;
+  overflow: hidden;
+  opacity: 0.7;
+  z-index: 1;
+}
+
+.skills-fv-background {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.skills-fv-bg-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.skills-fv-overlay {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background: linear-gradient(to right, #ffffff, transparent);
+}
+
+.skills-fv-content {
+  position: absolute;
+  left: 205px;
+  top: 201px;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.skills-fv-label {
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 21px;
+  letter-spacing: -0.31px;
+  color: #333;
+  margin: 0 0 16px 0;
+}
+
+.skills-fv-subtitle {
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro", sans-serif;
+  font-size: 34px;
+  font-weight: 700;
+  line-height: 41px;
+  letter-spacing: 0.4px;
+  color: #333333;
+  text-shadow: 2px 2px 16px rgba(255, 255, 255, 0.5);
+  margin: 0;
+}
+
+.skills-content-inner {
+  padding: 120px 16px 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+}
+
+/* Skills Intro Section */
+.skills-intro-section {
+  width: 100%;
+}
+
+.skills-intro-content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 1030px;
+  margin: 0 auto;
+}
+
+.skills-intro-title {
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro", sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 34px;
+  letter-spacing: 0.38px;
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin: 0 0 24px 0;
+}
+
+.skills-intro-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.skills-intro-text p {
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 21px;
+  letter-spacing: -0.31px;
+  color: #333333;
+  margin: 0;
+}
+
+/* Skills Section */
+.skills-section {
+  width: 100%;
+}
+
+.skills-grid {
+  display: flex;
+  gap: 24px;
+  max-width: 1030px;
+  margin: 0 auto;
+  flex-wrap: nowrap;
+}
+
+.skill-item {
+  flex: 1 0 0;
+  min-width: 0;
+  height: 103.75px;
+  aspect-ratio: 103.75 / 103.75;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.skill-icon {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.skill-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  display: block;
+}
+
+/* UIUX Skill */
+.skill-item-uiux {
+  border-radius: 103.75px;
+  box-shadow: 2px 2px 16px 0 rgba(151, 199, 255, 0.50);
+  overflow: hidden;
+}
+
+.skill-item-uiux .skill-icon {
+  display: none;
+}
+
+/* Figma Skill */
+.skill-item-figma {
+  border-radius: 103.75px;
+  box-shadow: 0 2px 16px 0 rgba(0, 0, 0, 0.50);
+  overflow: hidden;
+}
+
+.skill-item-figma .skill-icon {
+  display: none;
+}
+
+/* AI Skill */
+.skill-item-ai {
+  border-radius: 103.75px;
+  box-shadow: 2px 2px 16px 0 rgba(185, 117, 43, 0.50);
+  overflow: hidden;
+}
+
+.skill-item-ai .skill-icon {
+  display: none;
+}
+
+/* PS Skill */
+.skill-item-ps {
+  border-radius: 103.75px;
+  overflow: hidden;
+}
+
+.skill-item-ps .skill-icon {
+  display: none;
+}
+
+/* WP Skill */
+.skill-item-wp {
+  border-radius: 103.75px;
+  box-shadow: 2px 2px 16px 0 rgba(0, 116, 154, 0.50);
+  overflow: hidden;
+}
+
+.skill-item-wp .skill-icon {
+  display: none;
+}
+
+/* Studio Skill */
+.skill-item-studio {
+  border-radius: 103.75px;
+  box-shadow: 2px 2px 16px 0 rgba(0, 0, 0, 0.50);
+  overflow: hidden;
+}
+
+.skill-item-studio .skill-icon {
+  display: none;
+}
+
+/* Artificial Intelligence Skill */
+.skill-item-artificialintelligence {
+  border-radius: 103.75px;
+  box-shadow: 2px 2px 16px 0 rgba(0, 0, 0, 0.50);
+  overflow: hidden;
+}
+
+.skill-item-artificialintelligence .skill-icon {
+  display: none;
+}
+
+/* Cursor Skill */
+.skill-item-cursor {
+  border-radius: 103.75px;
+  box-shadow: 2px 2px 16px 0 rgba(0, 0, 0, 0.50);
+  overflow: hidden;
+}
+
+.skill-item-cursor .skill-icon {
+  display: none;
+}
+
+/* Biography Section */
+.biography-section {
+  width: 100%;
+}
+
+.biography-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 1030px;
+  margin: 0 auto;
+}
+
+.biography-item {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
+}
+
+.biography-content {
+  width: 100%;
+}
+
+.biography-box {
+  background-color: #f5f8ff;
+  border-radius: 8px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.biography-text {
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro", sans-serif;
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 22px;
+  letter-spacing: -0.43px;
+  color: #333333;
+  margin: 0;
+}
+
+.biography-arrow {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.biography-arrow svg {
+  width: 40px;
+  height: 40px;
+}
+
+.biography-item:last-child .biography-arrow {
+  display: none;
+}
+
+/* FAQ Section */
+.faq-section {
+  width: 100%;
+}
+
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  max-width: 1030px;
+  margin: 0 auto;
+}
+
+.faq-item {
+  padding: 24px 0;
+  border-bottom: 0.5px solid #999999;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.faq-item:last-child {
+  border-bottom: none;
+}
+
+.faq-question {
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro", sans-serif;
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 22px;
+  letter-spacing: -0.43px;
+  color: #333333;
+  margin: 0;
+}
+
+.faq-answer-box {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  background-color: #dee8fc;
+  border-radius: 8px;
+  padding: 24px;
+}
+
+.faq-answer {
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro", sans-serif;
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 22px;
+  letter-spacing: -0.43px;
+  color: #333333;
+  margin: 0;
+}
+
+/* Skills Page Responsive */
+@media (max-width: 768px) {
+  .skills-fv-section {
+    height: 400px;
+  }
+
+  .skills-fv-content {
+    left: 16px;
+    top: 120px;
+  }
+
+  .skills-fv-label {
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  .skills-fv-subtitle {
+    font-size: 28px;
+    line-height: 36px;
+  }
+
+  .skills-content-inner {
+    padding: 60px 16px;
+    gap: 60px;
+  }
+
+  .skills-intro-title {
+    font-size: 24px;
+    line-height: 32px;
+  }
+
+  .skills-grid {
+    flex-wrap: wrap;
+    gap: 24px;
+  }
+
+  .skill-item {
+    flex: 0 0 48px;
+    height: auto;
+    min-width: 48px;
+    max-width: 48px;
+    border-radius: 48px;
+  }
+
+  .skill-item-uiux,
+  .skill-item-figma,
+  .skill-item-ai,
+  .skill-item-ps,
+  .skill-item-wp,
+  .skill-item-studio,
+  .skill-item-artificialintelligence,
+  .skill-item-cursor {
+    border-radius: 48px;
+  }
+}
+
+@media (max-width: 480px) {
+  .skills-fv-content {
+    left: 16px;
+    top: 140px;
+  }
+
+  .skills-fv-label {
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  .skills-fv-subtitle {
+    font-size: 24px;
+    line-height: 32px;
+  }
+
+  .skill-item {
+    min-width: calc(30% - 8px);
+  }
 
   .plan-tabs {
     max-width: 100%;
