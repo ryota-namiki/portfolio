@@ -237,10 +237,68 @@ function portfolio_plan_tabs_script() {
   </script>
   <?php
 }
+/**
+ * オーバーレイメニュー機能用のJavaScriptを追加
+ */
+function portfolio_overlay_menu_script() {
+  ?>
+  <script>
+    (function() {
+      function initOverlayMenu() {
+        const menuToggle = document.getElementById('menu-toggle');
+        const nav = document.getElementById('overlay-menu');
+        
+        if (!menuToggle || !nav) return;
+
+        menuToggle.addEventListener('click', () => {
+          menuToggle.classList.toggle('active');
+          nav.classList.toggle('active');
+          const isOpen = menuToggle.classList.contains('active');
+          menuToggle.setAttribute('aria-expanded', isOpen);
+          nav.setAttribute('aria-hidden', !isOpen);
+          // メニューオープン時に背景スクロールを防止
+          document.body.style.overflow = isOpen ? 'hidden' : '';
+        });
+
+        // ESCキーでメニューを閉じる
+        document.addEventListener('keydown', (e) => {
+          if (e.key === 'Escape' && nav.classList.contains('active')) {
+            menuToggle.classList.remove('active');
+            nav.classList.remove('active');
+            menuToggle.setAttribute('aria-expanded', false);
+            nav.setAttribute('aria-hidden', true);
+            document.body.style.overflow = '';
+          }
+        });
+
+        // メニューリンクをクリックしたらメニューを閉じる
+        const navLinks = document.querySelectorAll('.nav-overlay__link');
+        navLinks.forEach((link) => {
+          link.addEventListener('click', () => {
+            menuToggle.classList.remove('active');
+            nav.classList.remove('active');
+            menuToggle.setAttribute('aria-expanded', false);
+            nav.setAttribute('aria-hidden', true);
+            document.body.style.overflow = '';
+          });
+        });
+      }
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initOverlayMenu);
+      } else {
+        initOverlayMenu();
+      }
+    })();
+  </script>
+  <?php
+}
+
 add_action( 'wp_enqueue_scripts', 'portfolio_enqueue_styles' );
 add_action( 'wp_footer', 'portfolio_fade_in_script' );
 add_action( 'wp_footer', 'portfolio_accordion_script' );
 add_action( 'wp_footer', 'portfolio_plan_tabs_script' );
+add_action( 'wp_footer', 'portfolio_overlay_menu_script' );
 
 /**
  * FV画像ヘルパー関数を読み込み

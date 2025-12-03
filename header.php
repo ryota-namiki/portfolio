@@ -49,7 +49,7 @@
           </div>
           <div class="navbar-menu-toggle">
             <span class="menu-text"><?php esc_html_e( 'Menu', 'portfolio' ); ?></span>
-            <button class="menu-icon-btn" aria-label="<?php esc_attr_e( 'Toggle menu', 'portfolio' ); ?>">
+            <button class="menu-icon-btn" id="menu-toggle" aria-label="<?php esc_attr_e( 'Toggle menu', 'portfolio' ); ?>" aria-controls="overlay-menu" aria-expanded="false">
               <svg class="menu-icon" width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M8 12H32M8 20H32M8 28H32" stroke="#333333" stroke-width="2" stroke-linecap="round"/>
               </svg>
@@ -59,6 +59,28 @@
       </div>
     </nav>
   </header>
+
+  <nav id="overlay-menu" class="nav-overlay" aria-hidden="true">
+    <div class="nav-overlay__content">
+      <ul class="nav-overlay__list">
+        <li class="nav-overlay__item">
+          <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="nav-overlay__link">ホーム</a>
+        </li>
+        <li class="nav-overlay__item">
+          <a href="<?php echo esc_url( get_post_type_archive_link( 'project' ) ); ?>" class="nav-overlay__link">制作実績</a>
+        </li>
+        <li class="nav-overlay__item">
+          <a href="<?php echo esc_url( home_url( '/plan/' ) ); ?>" class="nav-overlay__link">制作プラン</a>
+        </li>
+        <li class="nav-overlay__item">
+          <a href="<?php echo esc_url( home_url( '/skills/' ) ); ?>" class="nav-overlay__link">スキル・経歴</a>
+        </li>
+        <li class="nav-overlay__item">
+          <a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>" class="nav-overlay__link">お問い合わせ</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
 
   <div id="content" class="site-content">
 
