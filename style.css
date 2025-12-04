@@ -1178,6 +1178,10 @@ Responsive Design
     margin-top: 15vh;
   }
 
+  .section-container {
+    padding: 0;
+  }
+
   .site-content {
     margin-top: 60px;
   }
@@ -1772,13 +1776,21 @@ Project Detail Page
 .project-detail-material {
   width: 100%;
   margin: 0;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+  box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.1);
 }
 
 .project-detail-material-embed {
-  width: 100%;
+  width: 80%;
   margin: 0;
   position: relative;
-  padding-bottom: 78.02%; /* 960/749 aspect ratio for Google Slides */
+  padding-bottom: 62.416%; /* 80% of 78.02% for Google Slides */
   height: 0;
   overflow: hidden;
 }
@@ -3381,7 +3393,7 @@ Contact Page
   }
 
   .contact-content-inner {
-    padding: 60px 16px 0;
+    padding: 64px 16px 40px;
     gap: 40px;
   }
 
