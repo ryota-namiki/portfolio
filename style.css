@@ -3112,6 +3112,17 @@ Contact Page
   margin: 0 auto;
 }
 
+.contact-line-icon a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  transition: opacity 0.3s ease;
+}
+
+.contact-line-icon a:hover {
+  opacity: 0.8;
+}
+
 .contact-line-img {
   width: 100%;
   height: 100%;
@@ -3136,7 +3147,7 @@ Contact Page
 .contact-form {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 40px;
   max-width: 1030px;
   margin: 0 auto;
 }
@@ -3164,8 +3175,8 @@ Contact Page
 }
 
 .contact-form-required {
-  font-size: 10px;
-  color: #333333;
+  font-size: 20px;
+  color: #e53e3e;
   display: inline-block;
   width: 10px;
   height: 10px;
@@ -3396,5 +3407,131 @@ Contact Page
   .contact-submit-button {
     min-width: 100%;
     width: 100%;
+  }
+}
+
+/* ============================================
+Privacy Policy Page Styles
+============================================ */
+.privacy-fv-section {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 70vh;
+  overflow: hidden;
+  opacity: 0.7;
+  z-index: 1;
+}
+
+.privacy-fv-background {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.privacy-fv-bg-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.privacy-fv-overlay {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background: linear-gradient(to right, #ffffff, transparent);
+}
+
+.privacy-fv-content {
+  position: absolute;
+  left: 205px;
+  top: 201px;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.privacy-fv-subtitle {
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro", sans-serif;
+  font-size: 34px;
+  font-weight: 700;
+  line-height: 41px;
+  letter-spacing: 0.4px;
+  color: #333333;
+  text-shadow: 2px 2px 16px rgba(255, 255, 255, 0.5);
+  margin: 0;
+}
+
+.privacy-content-inner {
+  padding: 120px 16px 80px;
+  display: flex;
+  flex-direction: column;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.privacy-content-section {
+  width: 100%;
+}
+
+.privacy-content {
+  max-width: 1030px;
+  margin: 0 auto;
+}
+
+.privacy-text {
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 21px;
+  letter-spacing: -0.31px;
+  color: #333333;
+}
+
+.privacy-text p {
+  margin: 0 0 16px 0;
+}
+
+.privacy-text p:last-child {
+  margin-bottom: 0;
+}
+
+.privacy-text strong {
+  font-weight: 600;
+}
+
+/* Privacy Policy Page Responsive */
+@media (max-width: 768px) {
+  .privacy-fv-section {
+    height: 400px;
+  }
+
+  .privacy-fv-content {
+    left: 16px;
+    top: 120px;
+  }
+
+  .privacy-fv-subtitle {
+    font-size: 28px;
+    line-height: 36px;
+  }
+
+  .privacy-content-inner {
+    padding: 60px 16px 40px;
+  }
+
+  .privacy-text {
+    font-size: 14px;
+    line-height: 20px;
   }
 }
