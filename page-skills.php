@@ -132,7 +132,7 @@ get_header();
               <div class="biography-box">
                 <p class="biography-text">アパレル業界にて6年間、販売からスタートし、売上/人材マネジメントを経験</p>
                 <p class="biography-text">地域に合った戦略を提案し、売上前年度比15%アップに成功</p>
-                <p class="biography-text">また、新店舗立ち上げも経験しリーダシップを務めたが、業界的にECの成長とリアル店舗の売り上げ衰退を機に退職</p>
+                <p class="biography-text">また、新店舗立ち上げも経験しリーダシップを務めたが、EC業界的の成長とリアル店舗の売り上げ衰退を機にキャリアチェンジ</p>
               </div>
             </div>
             <div class="biography-arrow">
@@ -145,7 +145,8 @@ get_header();
           <div class="biography-item fade-in">
             <div class="biography-content">
               <div class="biography-box">
-                <p class="biography-text">SES企業に、WEB,UI/UXデザイナーとして転職。柔軟性と即戦力を求められる環境下で、幅広い業界との業務を経験</p>
+                <p class="biography-text">SES企業に、WEB,UI/UXデザイナーとして転職。柔軟性と即戦力を求められる環境下で、大手〜中小企業まで幅広い業界との業務を経験</p>
+                <p class="biography-text">業務はデザインのみでなく、要件定義やWF作成、コーディングやCMS構築など多岐に渡る。</p>
               </div>
             </div>
             <div class="biography-arrow">
@@ -158,7 +159,7 @@ get_header();
           <div class="biography-item fade-in">
             <div class="biography-content">
               <div class="biography-box">
-                <p class="biography-text">現在はフリーランスWEB,UI/UXデザイナーとして、デザイン制作に従事しております。</p>
+                <p class="biography-text">現在は独立をし、WEB,UI/UXデザイナーとして、WEB制作に従事しております。</p>
               </div>
             </div>
           </div>

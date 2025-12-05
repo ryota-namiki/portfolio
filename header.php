@@ -34,7 +34,7 @@
         <div class="site-branding">
           <h1 class="site-title">
             <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-              <?php bloginfo( 'name' ); ?>
+              <img src="<?php echo esc_url( get_template_directory_uri() . '/images/logo-t.svg' ); ?>" alt="<?php bloginfo( 'name' ); ?>" class="site-logo">
             </a>
           </h1>
         </div>
