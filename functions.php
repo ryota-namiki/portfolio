@@ -294,11 +294,131 @@ function portfolio_overlay_menu_script() {
   <?php
 }
 
+/**
+ * Contact Form 7用のJavaScriptを追加
+ */
+function portfolio_contact_form_7_script() {
+  // お問い合わせページでのみ読み込む
+  if ( is_page_template( 'page-contact.php' ) || is_page( 'contact' ) ) {
+    ?>
+    <script>
+      (function() {
+        function initContactForm7() {
+          const submitButtons = document.querySelectorAll('.js-cf7-submit');
+          
+          submitButtons.forEach(function(btn) {
+            btn.addEventListener('click', function(e) {
+              e.preventDefault();
+              e.stopPropagation();
+
+              // 対象のフォームを取得
+              const contactFormSection = document.querySelector('.contact-form-section');
+              if (!contactFormSection) {
+                console.warn('Contact form section not found');
+                return;
+              }
+
+              const form = contactFormSection.querySelector('form.wpcf7-form');
+              if (!form) {
+                console.warn('Contact Form 7 form not found');
+                return;
+              }
+
+              // Contact Form 7の送信ボタンを探す（より広範囲に検索）
+              let submitBtn = form.querySelector('input[type="submit"]');
+              if (!submitBtn) {
+                submitBtn = form.querySelector('button[type="submit"]');
+              }
+              if (!submitBtn) {
+                submitBtn = form.querySelector('.wpcf7-submit');
+              }
+              if (!submitBtn) {
+                submitBtn = form.querySelector('input.wpcf7-submit');
+              }
+              if (!submitBtn) {
+                submitBtn = form.querySelector('button.wpcf7-submit');
+              }
+              // フォームの外も検索（Contact Form 7の設定によっては送信ボタンが外にある場合がある）
+              if (!submitBtn) {
+                const formId = form.id || form.getAttribute('id');
+                if (formId) {
+                  submitBtn = document.querySelector('#' + formId.replace('wpcf7-f', 'wpcf7') + ' input[type="submit"]');
+                }
+              }
+              
+              if (submitBtn) {
+                // Contact Form 7の送信ボタンをクリック
+                submitBtn.click();
+              } else {
+                // Contact Form 7の送信イベントを直接トリガー
+                // フォームのsubmitイベントを発火させる
+                const submitEvent = new Event('submit', {
+                  bubbles: true,
+                  cancelable: true
+                });
+                
+                // Contact Form 7のイベントハンドラーをトリガー
+                if (form.dispatchEvent(submitEvent)) {
+                  // イベントがキャンセルされなかった場合、Contact Form 7の送信処理を実行
+                  // Contact Form 7は通常、submitイベントをリッスンしている
+                  const wpcf7Form = form.closest('.wpcf7');
+                  if (wpcf7Form) {
+                    // Contact Form 7の送信処理を手動でトリガー
+                    const formTag = wpcf7Form.querySelector('form');
+                    if (formTag && typeof jQuery !== 'undefined') {
+                      // jQueryを使用してContact Form 7の送信処理を実行
+                      jQuery(formTag).trigger('submit');
+                    } else {
+                      // フォームを直接送信
+                      form.submit();
+                    }
+                  } else {
+                    form.submit();
+                  }
+                }
+              }
+            });
+          });
+        }
+
+        // Contact Form 7が読み込まれた後に初期化
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', function() {
+            // Contact Form 7の読み込みを待つ
+            setTimeout(initContactForm7, 100);
+          });
+        } else {
+          setTimeout(initContactForm7, 100);
+        }
+      })();
+    </script>
+    <?php
+  }
+}
+
+/**
+ * Contact Form 7送信完了後のリダイレクト処理
+ */
+function portfolio_cf7_redirect_script() {
+  // お問い合わせページでのみ読み込む
+  if ( is_page_template( 'page-contact.php' ) || is_page( 'contact' ) ) {
+    ?>
+    <script>
+      document.addEventListener('wpcf7mailsent', function(event) {
+        window.location.href = '<?php echo esc_url( home_url( '/contact/thanks/' ) ); ?>';
+      }, false);
+    </script>
+    <?php
+  }
+}
+
 add_action( 'wp_enqueue_scripts', 'portfolio_enqueue_styles' );
 add_action( 'wp_footer', 'portfolio_fade_in_script' );
 add_action( 'wp_footer', 'portfolio_accordion_script' );
 add_action( 'wp_footer', 'portfolio_plan_tabs_script' );
 add_action( 'wp_footer', 'portfolio_overlay_menu_script' );
+add_action( 'wp_footer', 'portfolio_contact_form_7_script' );
+add_action( 'wp_footer', 'portfolio_cf7_redirect_script' );
 
 /**
  * FV画像ヘルパー関数を読み込み
@@ -319,4 +439,66 @@ function portfolio_modify_archive_query( $query ) {
   }
 }
 add_action( 'pre_get_posts', 'portfolio_modify_archive_query', 20 );
+
+/**
+ * Contact Form 7のメール送信をデバッグ
+ * メール送信の成功/失敗をログに記録
+ */
+function portfolio_cf7_mail_debug( $contact_form ) {
+  // メール送信前のフック
+  add_action( 'wpcf7_mail_sent', 'portfolio_cf7_mail_sent_log', 10, 1 );
+  add_action( 'wpcf7_mail_failed', 'portfolio_cf7_mail_failed_log', 10, 1 );
+}
+add_action( 'wpcf7_before_send_mail', 'portfolio_cf7_mail_debug' );
+
+function portfolio_cf7_mail_sent_log( $contact_form ) {
+  error_log( 'Contact Form 7: メール送信成功 - Form ID: ' . $contact_form->id() );
+}
+
+function portfolio_cf7_mail_failed_log( $contact_form ) {
+  error_log( 'Contact Form 7: メール送信失敗 - Form ID: ' . $contact_form->id() );
+}
+
+/**
+ * WordPressのメール送信機能を改善（開発環境用）
+ * 本番環境ではSMTPプラグインの使用を推奨
+ */
+function portfolio_configure_mail( $phpmailer ) {
+  // MAMP環境などでメール送信ができない場合の設定
+  // 本番環境では、SMTPプラグイン（例: WP Mail SMTP）の使用を推奨
+  
+  // デバッグモードを有効化（開発環境のみ）
+  if ( defined( 'WP_DEBUG' ) && WP_DEBUG ) {
+    $phpmailer->SMTPDebug = 2; // デバッグレベル（0-4）
+    $phpmailer->Debugoutput = function( $str, $level ) {
+      error_log( "PHPMailer [$level]: $str" );
+    };
+  }
+}
+add_action( 'phpmailer_init', 'portfolio_configure_mail' );
+
+/**
+ * メール送信のテスト機能（管理画面でのみ使用可能）
+ */
+function portfolio_test_mail() {
+  if ( ! current_user_can( 'manage_options' ) ) {
+    return;
+  }
+  
+  if ( isset( $_GET['test_mail'] ) && $_GET['test_mail'] === '1' ) {
+    $to = get_option( 'admin_email' );
+    $subject = 'テストメール - ' . get_bloginfo( 'name' );
+    $message = 'これはテストメールです。メール送信機能が正常に動作しています。';
+    $headers = array( 'Content-Type: text/html; charset=UTF-8' );
+    
+    $result = wp_mail( $to, $subject, $message, $headers );
+    
+    if ( $result ) {
+      wp_die( 'メール送信成功！メールボックスを確認してください。', 'メール送信テスト', array( 'back_link' => true ) );
+    } else {
+      wp_die( 'メール送信失敗。SMTPプラグインの設定を確認してください。', 'メール送信テスト', array( 'back_link' => true ) );
+    }
+  }
+}
+add_action( 'admin_init', 'portfolio_test_mail' );
 

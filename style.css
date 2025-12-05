@@ -412,8 +412,13 @@ Main Content Wrapper
   z-index: 2;
   background-color: #ffffff;
   padding-bottom: 80px;
-  margin-top: 40vh;
+  margin-top: 30vh;
   border-radius: 40px 40px 0 0;
+}
+
+/* プロジェクト詳細ページは除外 */
+.main-content-wrapper.project-detail-main-content {
+  margin-top: 40vh;
 }
 
 /* ============================================
@@ -1178,10 +1183,6 @@ Responsive Design
     margin-top: 15vh;
   }
 
-  .section-container {
-    padding: 0;
-  }
-
   .site-content {
     margin-top: 60px;
   }
@@ -1396,7 +1397,7 @@ Archive Project Page
   position: relative;
   z-index: 2;
   background-color: #ffffff;
-  margin-top: 40vh;
+  margin-top: 20vh;
   border-radius: 40px;
 }
 
@@ -1776,21 +1777,13 @@ Project Detail Page
 .project-detail-material {
   width: 100%;
   margin: 0;
-  background-color: rgba(255, 255, 255, 0.3);
-  border-radius: 12px;
-  padding: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 400px;
-  box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.1);
 }
 
 .project-detail-material-embed {
-  width: 80%;
+  width: 100%;
   margin: 0;
   position: relative;
-  padding-bottom: 62.416%; /* 80% of 78.02% for Google Slides */
+  padding-bottom: 78.02%; /* 960/749 aspect ratio for Google Slides */
   height: 0;
   overflow: hidden;
 }
@@ -3124,17 +3117,6 @@ Contact Page
   margin: 0 auto;
 }
 
-.contact-line-icon a {
-  display: block;
-  width: 100%;
-  height: 100%;
-  transition: opacity 0.3s ease;
-}
-
-.contact-line-icon a:hover {
-  opacity: 0.8;
-}
-
 .contact-line-img {
   width: 100%;
   height: 100%;
@@ -3156,12 +3138,30 @@ Contact Page
   width: 100%;
 }
 
+/* Contact Form 7 スタイル */
+.contact-form-section .wpcf7-form {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  max-width: 1030px;
+}
+
+.contact-form-section .wpcf7-form-control-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+}
+
+.contact-form-section .wpcf7-form-control-wrap label {
+  margin-bottom: 0;
+}
+
 .contact-form {
   display: flex;
   flex-direction: column;
   gap: 40px;
   max-width: 1030px;
-  margin: 0 auto;
 }
 
 .contact-form-field {
@@ -3169,6 +3169,11 @@ Contact Page
   flex-direction: column;
   gap: 16px;
   width: 100%;
+}
+
+/* プライバシーポリシーのチェックボックスフィールドを中央配置 */
+.contact-form-field.contact-privacy {
+  align-items: center;
 }
 
 .contact-form-label {
@@ -3188,7 +3193,7 @@ Contact Page
 
 .contact-form-required {
   font-size: 20px;
-  color: #e53e3e;
+  color: #ff0000;
   display: inline-block;
   width: 10px;
   height: 10px;
@@ -3199,7 +3204,7 @@ Contact Page
 .contact-form-textarea {
   width: 100%;
   padding: 24px;
-  border: 1px solid #999999;
+  border: 1px solid #156ad1;
   border-radius: 8px;
   font-family: -apple-system, BlinkMacSystemFont, "SF Pro", sans-serif;
   font-size: 17px;
@@ -3214,11 +3219,7 @@ Contact Page
 .contact-form-input:focus,
 .contact-form-textarea:focus {
   outline: none;
-  border-color: #156ad1;
-}
-
-.contact-form-input-focus {
-  border-color: #156ad1;
+  border: 2px solid #156ad1;
 }
 
 .contact-form-input::placeholder,
@@ -3236,6 +3237,26 @@ Contact Page
   gap: 24px;
   align-items: center;
   flex-wrap: wrap;
+}
+
+/* ラジオ風チェックボックス */
+.contact-form-radio-group input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 1px solid #333;
+  margin-right: 6px;
+  position: relative;
+}
+
+.contact-form-radio-group input[type="checkbox"]:checked::before {
+  content: "";
+  position: absolute;
+  inset: 3px;
+  border-radius: 50%;
+  background-color: #156ad1;
 }
 
 .contact-form-radio {
@@ -3289,6 +3310,63 @@ Contact Page
   cursor: pointer;
   justify-content: center;
   width: 100%;
+}
+
+/* Contact Form 7 プライバシーポリシーチェックボックス */
+.contact-form-field.contact-privacy,
+.contact-form-section .wpcf7-form-control-wrap.contact-privacy {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.contact-form-section .wpcf7-acceptance {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.contact-form-section .wpcf7-acceptance label {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  cursor: pointer;
+  margin: 0;
+}
+
+.contact-form-section .wpcf7-acceptance input[type="checkbox"] {
+  width: 24px;
+  height: 24px;
+  margin: 0;
+  cursor: pointer;
+  appearance: none;
+  border: 2px solid #999999;
+  border-radius: 4px;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.contact-form-section .wpcf7-acceptance input[type="checkbox"]:checked {
+  border-color: #156ad1;
+  background-color: #156ad1;
+}
+
+.contact-form-section .wpcf7-acceptance input[type="checkbox"]:checked::after {
+  content: '✓';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.contact-form-section .wpcf7-acceptance .contact-form-checkbox-label {
+  display: inline;
+  margin: 0;
 }
 
 .contact-form-checkbox input[type="checkbox"] {
@@ -3371,6 +3449,215 @@ Contact Page
   height: 24px;
 }
 
+/* Thanks Page Styles */
+.thanks-fv-section {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 70vh;
+  overflow: hidden;
+  opacity: 0.7;
+  z-index: 1;
+}
+
+.thanks-fv-background {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.thanks-fv-bg-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.thanks-fv-overlay {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background: linear-gradient(to right, #ffffff, transparent);
+}
+
+.thanks-fv-content {
+  position: absolute;
+  left: 205px;
+  top: 201px;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.thanks-fv-label {
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 21px;
+  letter-spacing: -0.31px;
+  color: #333;
+  margin: 0 0 16px 0;
+}
+
+.thanks-fv-subtitle {
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro", sans-serif;
+  font-size: 34px;
+  font-weight: 700;
+  line-height: 41px;
+  letter-spacing: 0.4px;
+  color: #333333;
+  text-shadow: 2px 2px 16px rgba(255, 255, 255, 0.5);
+  margin: 0;
+}
+
+.thanks-content-inner {
+  padding: 120px 16px 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+  max-width: 1030px;
+  margin: 0 auto;
+}
+
+.thanks-message-section {
+  width: 100%;
+}
+
+.thanks-message-content {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  align-items: center;
+  text-align: center;
+}
+
+.thanks-message-title {
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro", sans-serif;
+  font-size: 34px;
+  font-weight: 700;
+  line-height: 41px;
+  letter-spacing: 0.4px;
+  color: #333333;
+  margin: 0;
+}
+
+.thanks-message-text {
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro", sans-serif;
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 28px;
+  letter-spacing: -0.43px;
+  color: #333333;
+  max-width: 800px;
+}
+
+.thanks-message-text p {
+  margin: 0 0 16px 0;
+}
+
+.thanks-message-text p:last-child {
+  margin-bottom: 0;
+}
+
+/* Thanks Page LINE Section */
+.thanks-line-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.thanks-line-section .section-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 64px;
+}
+
+.thanks-line-icon {
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.thanks-line-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.thanks-line-text {
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro", sans-serif;
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 22px;
+  letter-spacing: -0.43px;
+  color: #333333;
+  margin: 0;
+  text-align: center;
+}
+
+.thanks-action-buttons {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 16px;
+}
+
+.thanks-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 40px;
+  border-radius: 12px;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 21px;
+  letter-spacing: -0.31px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  min-width: 240px;
+  width: 100%;
+  max-width: 300px;
+}
+
+.thanks-button-primary {
+  background: var(--gradient-primary);
+  color: #ffffff;
+}
+
+.thanks-button-primary:hover {
+  background: var(--gra-hover, linear-gradient(288deg, #DEE8FC 0%, #BDD1F8 100%));
+  color: #333333;
+}
+
+.thanks-button-secondary {
+  background-color: #ffffff;
+  color: #333333;
+  border: 2px solid #333333;
+}
+
+.thanks-button-secondary:hover {
+  background-color: #333333;
+  color: #ffffff;
+}
+
 /* Contact Page Responsive */
 @media (max-width: 768px) {
   .contact-fv-section {
@@ -3393,7 +3680,7 @@ Contact Page
   }
 
   .contact-content-inner {
-    padding: 64px 16px 40px;
+    padding: 60px 16px 0;
     gap: 40px;
   }
 
@@ -3420,130 +3707,54 @@ Contact Page
     min-width: 100%;
     width: 100%;
   }
-}
 
-/* ============================================
-Privacy Policy Page Styles
-============================================ */
-.privacy-fv-section {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 70vh;
-  overflow: hidden;
-  opacity: 0.7;
-  z-index: 1;
-}
-
-.privacy-fv-background {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-}
-
-.privacy-fv-bg-image {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-  pointer-events: none;
-  z-index: 0;
-}
-
-.privacy-fv-overlay {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
-  background: linear-gradient(to right, #ffffff, transparent);
-}
-
-.privacy-fv-content {
-  position: absolute;
-  left: 205px;
-  top: 201px;
-  z-index: 2;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
-
-.privacy-fv-subtitle {
-  font-family: -apple-system, BlinkMacSystemFont, "SF Pro", sans-serif;
-  font-size: 34px;
-  font-weight: 700;
-  line-height: 41px;
-  letter-spacing: 0.4px;
-  color: #333333;
-  text-shadow: 2px 2px 16px rgba(255, 255, 255, 0.5);
-  margin: 0;
-}
-
-.privacy-content-inner {
-  padding: 120px 16px 80px;
-  display: flex;
-  flex-direction: column;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.privacy-content-section {
-  width: 100%;
-}
-
-.privacy-content {
-  max-width: 1030px;
-  margin: 0 auto;
-}
-
-.privacy-text {
-  font-family: -apple-system, BlinkMacSystemFont, "SF Pro", sans-serif;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 21px;
-  letter-spacing: -0.31px;
-  color: #333333;
-}
-
-.privacy-text p {
-  margin: 0 0 16px 0;
-}
-
-.privacy-text p:last-child {
-  margin-bottom: 0;
-}
-
-.privacy-text strong {
-  font-weight: 600;
-}
-
-/* Privacy Policy Page Responsive */
-@media (max-width: 768px) {
-  .privacy-fv-section {
+  /* Thanks Page Responsive */
+  .thanks-fv-section {
     height: 400px;
   }
 
-  .privacy-fv-content {
+  .thanks-fv-content {
     left: 16px;
     top: 120px;
   }
 
-  .privacy-fv-subtitle {
+  .thanks-fv-label {
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  .thanks-fv-subtitle {
     font-size: 28px;
     line-height: 36px;
   }
 
-  .privacy-content-inner {
-    padding: 60px 16px 40px;
+  .thanks-content-inner {
+    padding: 60px 16px 0;
+    gap: 40px;
   }
 
-  .privacy-text {
-    font-size: 14px;
-    line-height: 20px;
+  .thanks-message-title {
+    font-size: 28px;
+    line-height: 36px;
+  }
+
+  .thanks-message-text {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .thanks-line-icon {
+    width: 80px;
+    height: 80px;
+  }
+
+  .thanks-action-buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .thanks-button {
+    width: 100%;
+    max-width: 400px;
   }
 }
