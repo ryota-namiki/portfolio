@@ -46,10 +46,10 @@
           <div class="footer-social">
             <?php
             $sns_icons = array(
-              array( 'url' => '#', 'icon' => 'sns-icon-1.webp', 'alt' => 'SNS 1' ),
-              array( 'url' => '#', 'icon' => 'sns-icon-2.webp', 'alt' => 'SNS 2' ),
-              array( 'url' => '#', 'icon' => 'sns-icon-3.webp', 'alt' => 'SNS 3' ),
-              array( 'url' => '#', 'icon' => 'sns-icon-4.webp', 'alt' => 'SNS 4' ),
+              array( 'url' => 'https://www.instagram.com/ryota_namiki_?igsh=cHphMDNqenYwOWR1&utm_source=qr', 'icon' => 'sns-icon-1.webp', 'alt' => 'Instagram' ),
+              array( 'url' => 'https://x.com/ryota_namiki_?s=21&t=jbMvEdOn6YwLAPmcFLbmDg', 'icon' => 'sns-icon-2.webp', 'alt' => 'X (Twitter)' ),
+              array( 'url' => 'https://www.threads.com/@ryota_namiki_?igshid=NTc4MTIwNjQ2YQ==', 'icon' => 'sns-icon-3.webp', 'alt' => 'Threads' ),
+              array( 'url' => 'https://lin.ee/fmCB85R', 'icon' => 'sns-icon-4.webp', 'alt' => 'LINE' ),
             );
             foreach ( $sns_icons as $sns ) {
               $icon_url = get_template_directory_uri() . '/images/' . $sns['icon'];
