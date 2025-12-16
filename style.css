@@ -36,7 +36,7 @@ body {
   font-size: 16px;
   line-height: 1.5;
   font-weight: 400;
-  color: #333333;
+  color: #14212B;
   background-color: #ffffff;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -142,7 +142,7 @@ Header & Navigation
   font-weight: 400;
   line-height: 41px;
   letter-spacing: 0.4px;
-  color: #333333;
+  color: #14212B;
   margin: 0;
   height: 36px;
   display: flex;
@@ -150,7 +150,7 @@ Header & Navigation
 }
 
 .site-branding .site-title a {
-  color: #333333;
+  color: #14212B;
   text-decoration: none;
   display: flex;
   align-items: center;
@@ -161,6 +161,10 @@ Header & Navigation
   height: 44px;
   width: auto;
   display: block;
+}
+
+.site-logo-mobile {
+  display: none;
 }
 
 .navbar-actions {
@@ -196,7 +200,7 @@ Header & Navigation
 }
 
 .navbar-btn-dark {
-  background-color: #333333;
+  background-color: #14212B;
   color: #ffffff;
 }
 
@@ -227,7 +231,7 @@ Header & Navigation
   font-weight: 400;
   line-height: 28px;
   letter-spacing: -0.26px;
-  color: #333333;
+  color: #14212B;
   white-space: nowrap;
 }
 
@@ -403,7 +407,7 @@ FV Section (Hero)
   font-weight: 700;
   line-height: 41px;
   letter-spacing: 0.4px;
-  color: #333333;
+  color: #14212B;
   text-shadow: 2px 2px 16px rgba(255, 255, 255, 0.5);
   display: flex;
   flex-direction: column;
@@ -467,7 +471,7 @@ Works Section
   font-weight: 400;
   line-height: 20px;
   letter-spacing: 1px;
-  color: #333333;
+  color: #14212B;
   margin-bottom: 0;
 }
 
@@ -553,7 +557,7 @@ Projects Grid
   font-weight: 400;
   line-height: 25px;
   letter-spacing: -0.45px;
-  color: #333333;
+  color: #14212B;
   margin: 0;
 }
 
@@ -634,8 +638,8 @@ Buttons
   margin: 0 auto;
   max-width: 376px;
   background: #ffffff;
-  color: #333333;
-  border: 1px solid #333333;
+  color: #14212B;
+  border: 1px solid #14212B;
   padding: 9px 16px;
   gap: 16px;
 }
@@ -702,7 +706,7 @@ Plan Section
   font-weight: 400;
   line-height: 21px;
   letter-spacing: -0.31px;
-  color: #333333;
+  color: #14212B;
   margin: 0;
 }
 
@@ -725,7 +729,7 @@ Plan Section
   font-weight: 400;
   line-height: 21px;
   letter-spacing: -0.31px;
-  color: #333333;
+  color: #14212B;
   margin: 0;
 }
 
@@ -788,7 +792,7 @@ Why Choose Section
   font-size: 28px;
   font-weight: 400;
   line-height: 34px;
-  color: #333333;
+  color: #14212B;
   margin: 0;
 }
 
@@ -815,7 +819,7 @@ Why Choose Section
   font-weight: 400;
   line-height: 22px;
   letter-spacing: -0.43px;
-  color: #333333;
+  color: #14212B;
 }
 
 .why-choose-text p {
@@ -958,7 +962,7 @@ Footer
   font-weight: 400;
   line-height: 12px;
   letter-spacing: 1px;
-  color: #333333;
+  color: #14212B;
 }
 
 .footer-name {
@@ -967,7 +971,7 @@ Footer
   font-weight: 400;
   line-height: 34px;
   letter-spacing: 0.38px;
-  color: #333333;
+  color: #14212B;
 }
 
 .footer-tagline {
@@ -975,7 +979,7 @@ Footer
   font-size: 12px;
   font-weight: 400;
   line-height: 16px;
-  color: #333333;
+  color: #14212B;
 }
 
 .footer-tagline p {
@@ -1009,7 +1013,7 @@ Footer
   flex-direction: column;
   gap: 0;
   text-decoration: none;
-  color: #333333;
+  color: #14212B;
   font-family: -apple-system, BlinkMacSystemFont, "SF Pro", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   font-size: 13px;
   font-weight: 400;
@@ -1028,7 +1032,7 @@ Footer
   font-weight: 400;
   line-height: 13px;
   letter-spacing: 0.06px;
-  color: #333333;
+  color: #14212B;
   margin-bottom: 0;
 }
 
@@ -1173,7 +1177,15 @@ Responsive Design
     font-size: 20px;
     line-height: 25px;
     letter-spacing: -0.45px;
-    height: auto;
+  }
+
+  .site-logo-desktop {
+    display: none;
+  }
+
+  .site-logo-mobile {
+    display: block;
+    height: 22px;
   }
 
   .navbar-buttons {
@@ -1196,6 +1208,17 @@ Responsive Design
     margin-top: 60px;
   }
 
+  .section-title {
+    font-size: 28px;
+    line-height: 36px;
+  }
+
+  .section-divider {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
   .fv-section {
     height: 400px;
   }
@@ -1209,8 +1232,8 @@ Responsive Design
   }
 
   .fv-title {
-    font-size: 24px;
-    line-height: 32px;
+    font-size: 20px;
+    line-height: 28px;
   }
 
   .works-section {
@@ -1219,12 +1242,8 @@ Responsive Design
   }
 
   .section-title {
-    font-size: 28px;
-    line-height: 36px;
-  }
-
-  .section-divider {
-    display: none;
+    font-size: 24px;
+    line-height: 32px;
   }
 
   .projects-grid {
@@ -1235,18 +1254,6 @@ Responsive Design
   .why-choose-section,
   .contact-section {
     padding: 60px 16px;
-  }
-}
-
-@media (max-width: 480px) {
-  .fv-title {
-    font-size: 20px;
-    line-height: 28px;
-  }
-
-  .section-title {
-    font-size: 24px;
-    line-height: 32px;
   }
 
   .project-title {
@@ -1439,7 +1446,7 @@ Archive Project Page
   font-weight: 400;
   line-height: 20px;
   letter-spacing: 1px;
-  color: #333333;
+  color: #14212B;
   margin-bottom: 0;
 }
 
@@ -1518,7 +1525,7 @@ Archive Project Page
   font-weight: 400;
   line-height: 25px;
   letter-spacing: -0.45px;
-  color: #333333;
+  color: #14212B;
   margin: 0;
 }
 
@@ -1633,7 +1640,7 @@ Project Detail Page
   font-weight: 400;
   line-height: 21px;
   letter-spacing: -0.31px;
-  color: #333;
+  color: #14212B;
   margin: 0 0 16px 0;
 }
 
@@ -1643,7 +1650,7 @@ Project Detail Page
   font-weight: 700;
   line-height: 41px;
   letter-spacing: 0.4px;
-  color: #333333;
+  color: #14212B;
   text-shadow: 2px 2px 16px rgba(255, 255, 255, 0.5);
   margin: 0 0 16px 0;
 }
@@ -1654,7 +1661,7 @@ Project Detail Page
   font-weight: 700;
   line-height: 41px;
   letter-spacing: 0.4px;
-  color: #333333;
+  color: #14212B;
   text-shadow: 2px 2px 16px rgba(255, 255, 255, 0.5);
   margin: 0 0 16px 0;
 }
@@ -1665,7 +1672,7 @@ Project Detail Page
   font-weight: 400;
   line-height: 21px;
   letter-spacing: -0.31px;
-  color: #333;
+  color: #14212B;
   margin: 0 0 16px 0;
 }
 
@@ -1748,7 +1755,7 @@ Project Detail Page
   font-weight: 400;
   line-height: 25px;
   letter-spacing: -0.45px;
-  color: #333333;
+  color: #14212B;
   margin: 0;
 }
 
@@ -1758,7 +1765,7 @@ Project Detail Page
   font-weight: 400;
   line-height: 24px;
   letter-spacing: -0.31px;
-  color: #333333;
+  color: #14212B;
   width: 100%;
   opacity: 1;
   visibility: visible;
@@ -1862,7 +1869,7 @@ Project Detail Page
   font-weight: 400;
   line-height: 24px;
   letter-spacing: -0.31px;
-  color: #333333;
+  color: #14212B;
   margin: 40px 0 0 0;
 }
 
@@ -1890,8 +1897,9 @@ Project Detail Page
   }
 
   .project-detail-fv-content {
-    left: 16px;
-    top: 120px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
   }
 
   .project-detail-fv-label {
@@ -1935,6 +1943,11 @@ Project Detail Page
     gap: 32px;
   }
 
+  .project-detail-image-wrapper {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
   /* 実績詳細ページ専用 */
   .project-detail-main-content {
     margin-top: 28vh;
@@ -1942,9 +1955,40 @@ Project Detail Page
 }
 
 @media (max-width: 480px) {
+  .section-container {
+    padding: 0;
+  }
+
+  .archive-content-wrapper {
+    margin-top: 1vh;
+  }
+
+  .project-detail-media-container {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  .project-detail-image-wrapper {
+    max-width: 100%;
+    overflow-x: hidden;
+    width: 100%;
+  }
+
+  .project-detail-media-section .section-container {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  .project-detail-media-container {
+    padding: 16px;
+  }
+
   .project-detail-fv-content {
     left: 16px;
-    top: 140px;
+    right: 16px;
+    top: 40%;
+    transform: translateY(-50%);
+    text-align: left;
   }
 
   .project-detail-fv-label {
@@ -1959,7 +2003,10 @@ Project Detail Page
 
   .plan-fv-content {
     left: 16px;
-    top: 140px;
+    right: 16px;
+    top: 40%;
+    transform: translateY(-50%);
+    text-align: left;
   }
 
   .plan-fv-label {
@@ -1968,8 +2015,8 @@ Project Detail Page
   }
 
   .plan-fv-subtitle {
-    font-size: 24px;
-    line-height: 32px;
+    font-size: 20px;
+    line-height: 36px;
   }
 
   .project-detail-fv-title {
@@ -2040,7 +2087,7 @@ Plan Page
   font-weight: 400;
   line-height: 21px;
   letter-spacing: -0.31px;
-  color: #333;
+  color: #14212B;
   margin: 0 0 16px 0;
 }
 
@@ -2050,7 +2097,7 @@ Plan Page
   font-weight: 700;
   line-height: 41px;
   letter-spacing: 0.4px;
-  color: #333333;
+  color: #14212B;
   text-shadow: 2px 2px 16px rgba(255, 255, 255, 0.5);
   margin: 0;
 }
@@ -2094,7 +2141,7 @@ Plan Page
   font-weight: 400;
   line-height: 21px;
   letter-spacing: -0.31px;
-  color: #333333;
+  color: #14212B;
   margin: 0;
 }
 
@@ -2145,7 +2192,7 @@ Plan Page
   font-weight: 400;
   line-height: 28px;
   letter-spacing: -0.26px;
-  color: #333333;
+  color: #14212B;
   margin: 0;
 }
 
@@ -2155,7 +2202,7 @@ Plan Page
   font-weight: 400;
   line-height: 20px;
   letter-spacing: -0.23px;
-  color: #333333;
+  color: #14212B;
   margin: 0;
 }
 
@@ -2238,7 +2285,7 @@ Plan Page
   font-weight: 400;
   line-height: 16px;
   letter-spacing: 0;
-  color: #333333;
+  color: #14212B;
   margin: 0;
 }
 
@@ -2270,7 +2317,7 @@ Plan Page
   font-weight: 400;
   line-height: 20px;
   letter-spacing: -0.23px;
-  color: #333333;
+  color: #14212B;
   margin: 0;
   flex: 1;
   text-align: center;
@@ -2297,7 +2344,7 @@ Plan Page
   font-weight: 400;
   line-height: 20px;
   letter-spacing: -0.23px;
-  color: #333333;
+  color: #14212B;
   width: 60px;
   flex-shrink: 0;
 }
@@ -2308,7 +2355,7 @@ Plan Page
   font-weight: 600;
   line-height: 22px;
   letter-spacing: -0.43px;
-  color: #333333;
+  color: #14212B;
   text-align: center;
 }
 
@@ -2322,8 +2369,8 @@ Plan Page
 
 .plan-cta .plan-price-button {
   background: #ffffff;
-  color: #333333;
-  border: 1px solid #333333;
+  color: #14212B;
+  border: 1px solid #14212B;
   padding: 9px 16px 9px 48px;
 }
 
@@ -2341,8 +2388,8 @@ Plan Page
 
 .plan-cta .plan-price-button .icon-arrow,
 .plan-cta .plan-price-button .icon-arrow path {
-  color: #333333;
-  stroke: #333333;
+  color: #14212B;
+  stroke: #14212B;
 }
 
 /* Plan Process Section */
@@ -2393,7 +2440,7 @@ Plan Page
   font-weight: 600;
   line-height: 22px;
   letter-spacing: -0.43px;
-  color: #333333;
+  color: #14212B;
   margin: 0;
 }
 
@@ -2412,7 +2459,7 @@ Plan Page
   font-weight: 400;
   line-height: 22px;
   letter-spacing: -0.43px;
-  color: #333333;
+  color: #14212B;
   margin: 0;
 }
 
@@ -2422,7 +2469,7 @@ Plan Page
   font-weight: 400;
   line-height: 16px;
   letter-spacing: 0;
-  color: #333333;
+  color: #14212B;
   margin: 0;
 }
 
@@ -2504,7 +2551,7 @@ Plan Page
   font-weight: 600;
   line-height: 22px;
   letter-spacing: -0.43px;
-  color: #333333;
+  color: #14212B;
   margin: 0;
 }
 
@@ -2514,7 +2561,7 @@ Plan Page
   font-weight: 400;
   line-height: 21px;
   letter-spacing: -0.31px;
-  color: #333333;
+  color: #14212B;
   margin: 0;
 }
 
@@ -2528,6 +2575,12 @@ Plan Page
   .plan-cards-container {
     flex-direction: column;
   }
+
+  .plan-fv-content {
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+  }
 }
 
 @media (max-width: 768px) {
@@ -2536,8 +2589,9 @@ Plan Page
   }
 
   .plan-fv-content {
-    left: 16px;
-    top: 120px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
   }
 
   .plan-fv-label {
@@ -2546,7 +2600,7 @@ Plan Page
   }
 
   .plan-fv-subtitle {
-    font-size: 28px;
+    font-size: 20px;
     line-height: 36px;
   }
 
@@ -2622,7 +2676,7 @@ Skills Page
   font-weight: 400;
   line-height: 21px;
   letter-spacing: -0.31px;
-  color: #333;
+  color: #14212B;
   margin: 0 0 16px 0;
 }
 
@@ -2632,7 +2686,7 @@ Skills Page
   font-weight: 700;
   line-height: 41px;
   letter-spacing: 0.4px;
-  color: #333333;
+  color: #14212B;
   text-shadow: 2px 2px 16px rgba(255, 255, 255, 0.5);
   margin: 0;
 }
@@ -2682,7 +2736,7 @@ Skills Page
   font-weight: 400;
   line-height: 21px;
   letter-spacing: -0.31px;
-  color: #333333;
+  color: #14212B;
   margin: 0;
 }
 
@@ -2853,7 +2907,7 @@ Skills Page
   font-weight: 400;
   line-height: 22px;
   letter-spacing: -0.43px;
-  color: #333333;
+  color: #14212B;
   margin: 0;
 }
 
@@ -2906,7 +2960,7 @@ Skills Page
   font-weight: 600;
   line-height: 22px;
   letter-spacing: -0.43px;
-  color: #333333;
+  color: #14212B;
   margin: 0;
 }
 
@@ -2925,7 +2979,7 @@ Skills Page
   font-weight: 400;
   line-height: 22px;
   letter-spacing: -0.43px;
-  color: #333333;
+  color: #14212B;
   margin: 0;
 }
 
@@ -2936,8 +2990,9 @@ Skills Page
   }
 
   .skills-fv-content {
-    left: 16px;
-    top: 120px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
   }
 
   .skills-fv-label {
@@ -2971,6 +3026,7 @@ Skills Page
     min-width: 48px;
     max-width: 48px;
     border-radius: 48px;
+    transform: scale(0.9);
   }
 
   .skill-item-uiux,
@@ -2988,21 +3044,41 @@ Skills Page
 @media (max-width: 480px) {
   .skills-fv-content {
     left: 16px;
-    top: 140px;
+    right: 16px;
+    top: 40%;
+    transform: translateY(-50%);
+    text-align: left;
   }
 
   .skills-fv-label {
     font-size: 14px;
     line-height: 20px;
+    margin-bottom: 8px;
   }
 
   .skills-fv-subtitle {
-    font-size: 24px;
+    font-size: 20px;
     line-height: 32px;
   }
 
   .skill-item {
-    min-width: calc(30% - 8px);
+    flex: 0 0 48px;
+    height: auto;
+    min-width: 48px;
+    max-width: 48px;
+    border-radius: 48px;
+    transform: scale(0.9);
+  }
+
+  .skill-item-uiux,
+  .skill-item-figma,
+  .skill-item-ai,
+  .skill-item-ps,
+  .skill-item-wp,
+  .skill-item-studio,
+  .skill-item-artificialintelligence,
+  .skill-item-cursor {
+    border-radius: 48px;
   }
 
   .plan-tabs {
@@ -3041,17 +3117,11 @@ Contact Page
   inset: 0;
   width: 100%;
   height: 100%;
+  background: var(--gradient-primary);
 }
 
 .contact-fv-bg-image {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-  pointer-events: none;
-  z-index: 0;
+  display: none;
 }
 
 .contact-fv-overlay {
@@ -3079,7 +3149,7 @@ Contact Page
   font-weight: 400;
   line-height: 21px;
   letter-spacing: -0.31px;
-  color: #333;
+  color: #14212B;
   margin: 0 0 16px 0;
 }
 
@@ -3089,7 +3159,7 @@ Contact Page
   font-weight: 700;
   line-height: 41px;
   letter-spacing: 0.4px;
-  color: #333333;
+  color: #14212B;
   text-shadow: 2px 2px 16px rgba(255, 255, 255, 0.5);
   margin: 0;
 }
@@ -3138,7 +3208,7 @@ Contact Page
   font-weight: 400;
   line-height: 22px;
   letter-spacing: -0.43px;
-  color: #333333;
+  color: #14212B;
   margin: 0;
   text-align: center;
 }
@@ -3197,7 +3267,7 @@ Contact Page
   font-weight: 600;
   line-height: 22px;
   letter-spacing: -0.43px;
-  color: #333333;
+  color: #14212B;
 }
 
 .contact-form-required {
@@ -3220,7 +3290,7 @@ Contact Page
   font-weight: 400;
   line-height: 22px;
   letter-spacing: -0.43px;
-  color: #333333;
+  color: #14212B;
   background-color: #ffffff;
   transition: border-color 0.3s ease;
 }
@@ -3255,7 +3325,7 @@ Contact Page
   width: 16px;
   height: 16px;
   border-radius: 50%;
-  border: 1px solid #333;
+  border: 1px solid #14212B;
   margin-right: 6px;
   position: relative;
 }
@@ -3309,7 +3379,7 @@ Contact Page
   font-weight: 400;
   line-height: 21px;
   letter-spacing: -0.31px;
-  color: #333333;
+  color: #14212B;
 }
 
 .contact-form-checkbox {
@@ -3513,7 +3583,7 @@ Contact Page
   font-weight: 400;
   line-height: 21px;
   letter-spacing: -0.31px;
-  color: #333;
+  color: #14212B;
   margin: 0 0 16px 0;
 }
 
@@ -3523,7 +3593,7 @@ Contact Page
   font-weight: 700;
   line-height: 41px;
   letter-spacing: 0.4px;
-  color: #333333;
+  color: #14212B;
   text-shadow: 2px 2px 16px rgba(255, 255, 255, 0.5);
   margin: 0;
 }
@@ -3555,7 +3625,7 @@ Contact Page
   font-weight: 700;
   line-height: 41px;
   letter-spacing: 0.4px;
-  color: #333333;
+  color: #14212B;
   margin: 0;
 }
 
@@ -3565,7 +3635,7 @@ Contact Page
   font-weight: 400;
   line-height: 28px;
   letter-spacing: -0.43px;
-  color: #333333;
+  color: #14212B;
   max-width: 800px;
 }
 
@@ -3613,7 +3683,7 @@ Contact Page
   font-weight: 400;
   line-height: 22px;
   letter-spacing: -0.43px;
-  color: #333333;
+  color: #14212B;
   margin: 0;
   text-align: center;
 }
@@ -3653,17 +3723,17 @@ Contact Page
 
 .thanks-button-primary:hover {
   background: var(--gra-hover, linear-gradient(288deg, #DEE8FC 0%, #BDD1F8 100%));
-  color: #333333;
+  color: #14212B;
 }
 
 .thanks-button-secondary {
   background-color: #ffffff;
-  color: #333333;
-  border: 2px solid #333333;
+  color: #14212B;
+  border: 2px solid #14212B;
 }
 
 .thanks-button-secondary:hover {
-  background-color: #333333;
+  background-color: #14212B;
   color: #ffffff;
 }
 
@@ -3674,8 +3744,9 @@ Contact Page
   }
 
   .contact-fv-content {
-    left: 16px;
-    top: 120px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
   }
 
   .contact-fv-label {
@@ -3684,7 +3755,7 @@ Contact Page
   }
 
   .contact-fv-subtitle {
-    font-size: 28px;
+    font-size: 20px;
     line-height: 36px;
   }
 
@@ -3723,8 +3794,9 @@ Contact Page
   }
 
   .thanks-fv-content {
-    left: 16px;
-    top: 120px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
   }
 
   .thanks-fv-label {
@@ -3750,6 +3822,22 @@ Contact Page
   .thanks-message-text {
     font-size: 16px;
     line-height: 24px;
+  }
+
+  .contact-fv-content {
+    left: 16px;
+    right: 16px;
+    top: 40%;
+    transform: translateY(-50%);
+    text-align: left;
+  }
+
+  .thanks-fv-content {
+    left: 16px;
+    right: 16px;
+    top: 40%;
+    transform: translateY(-50%);
+    text-align: left;
   }
 
   .thanks-line-icon {

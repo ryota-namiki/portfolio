@@ -12,23 +12,7 @@ get_header();
 <!-- Skills Page FV Section -->
 <section class="skills-fv-section">
   <div class="skills-fv-background">
-    <?php
-    $fv_image_id = portfolio_get_page_fv_image_id();
-    if ( $fv_image_id ) {
-      echo wp_get_attachment_image( $fv_image_id, 'full', false, array(
-        'class' => 'skills-fv-bg-image',
-        'loading' => 'eager',
-        'fetchpriority' => 'high',
-        'decoding' => 'async',
-        'alt' => get_the_title()
-      ) );
-    } else {
-      $skills_fv_bg = portfolio_get_image_url( 'fv_background_image', 'full' );
-      if ( $skills_fv_bg ) {
-        echo '<img src="' . esc_url( $skills_fv_bg ) . '" alt="Skills Background" class="skills-fv-bg-image" loading="eager" fetchpriority="high" decoding="async">';
-      }
-    }
-    ?>
+    <img src="<?php echo esc_url( get_template_directory_uri() . '/images/1920.png' ); ?>" alt="Skills Background" class="skills-fv-bg-image" loading="eager" fetchpriority="high" decoding="async">
     <div class="skills-fv-overlay"></div>
   </div>
   <div class="skills-fv-content">
@@ -80,9 +64,9 @@ get_header();
           </div>
           <div class="skill-item skill-item-figma fade-in" style="background-image: url('<?php echo $skill_figma_url; ?>'); background-position: 50% center; background-size: cover; background-repeat: no-repeat; background-color: #FFF;">
           </div>
-          <div class="skill-item skill-item-ai fade-in" style="background-image: url('<?php echo $skill_ai_url; ?>'); background-position: 19.966px 22.531px; background-size: 58.294% 58.294%; background-repeat: no-repeat; background-color: #2E0402;">
+          <div class="skill-item skill-item-ai fade-in" style="background-image: url('<?php echo $skill_ai_url; ?>'); background-position: 50% center; background-size: 58.294% 58.294%; background-repeat: no-repeat; background-color: #2E0402;">
           </div>
-          <div class="skill-item skill-item-ps fade-in" style="border-radius: 103.75px; background: url('<?php echo $skill_ps_url; ?>') 19.966px 22.531px / 58.294% 58.294% no-repeat, #081E34;">
+          <div class="skill-item skill-item-ps fade-in" style="border-radius: 103.75px; background-image: url('<?php echo $skill_ps_url; ?>'); background-position: 50% center; background-size: 58.294% 58.294%; background-repeat: no-repeat; background-color: #081E34;">
           </div>
           <?php
           $skill_wp_url = esc_url( $template_uri . '/images/skill-wp.png' );
@@ -122,7 +106,7 @@ get_header();
             </div>
             <div class="biography-arrow">
               <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M20 10L20 30M20 30L10 20M20 30L30 20" stroke="#333333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M20 10L20 30M20 30L10 20M20 30L30 20" stroke="#14212B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
             </div>
           </div>
@@ -137,7 +121,7 @@ get_header();
             </div>
             <div class="biography-arrow">
               <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M20 10L20 30M20 30L10 20M20 30L30 20" stroke="#333333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M20 10L20 30M20 30L10 20M20 30L30 20" stroke="#14212B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
             </div>
           </div>
@@ -151,7 +135,7 @@ get_header();
             </div>
             <div class="biography-arrow">
               <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M20 10L20 30M20 30L10 20M20 30L30 20" stroke="#333333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M20 10L20 30M20 30L10 20M20 30L30 20" stroke="#14212B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
             </div>
           </div>

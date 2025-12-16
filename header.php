@@ -34,7 +34,8 @@
         <div class="site-branding">
           <h1 class="site-title">
             <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-              <img src="<?php echo esc_url( get_template_directory_uri() . '/images/logo-t.svg' ); ?>" alt="<?php bloginfo( 'name' ); ?>" class="site-logo">
+              <img src="<?php echo esc_url( get_template_directory_uri() . '/images/logo-t.svg' ); ?>" alt="<?php bloginfo( 'name' ); ?>" class="site-logo site-logo-desktop">
+              <img src="<?php echo esc_url( get_template_directory_uri() . '/images/logo.svg' ); ?>" alt="<?php bloginfo( 'name' ); ?>" class="site-logo site-logo-mobile">
             </a>
           </h1>
         </div>
@@ -51,7 +52,7 @@
             <span class="menu-text"><?php esc_html_e( 'Menu', 'portfolio' ); ?></span>
             <button class="menu-icon-btn" id="menu-toggle" aria-label="<?php esc_attr_e( 'Toggle menu', 'portfolio' ); ?>" aria-controls="overlay-menu" aria-expanded="false">
               <svg class="menu-icon" width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M8 12H32M8 20H32M8 28H32" stroke="#333333" stroke-width="2" stroke-linecap="round"/>
+                <path d="M8 12H32M8 20H32M8 28H32" stroke="#14212B" stroke-width="2" stroke-linecap="round"/>
               </svg>
             </button>
           </div>

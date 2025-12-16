@@ -12,23 +12,6 @@ get_header();
 <!-- Contact Page FV Section -->
 <section class="contact-fv-section">
 <div class="contact-fv-background">
-<?php
-$fv_image_id = portfolio_get_page_fv_image_id();
-if ( $fv_image_id ) {
-echo wp_get_attachment_image( $fv_image_id, 'full', false, array(
-    'class' => 'contact-fv-bg-image',
-    'loading' => 'eager',
-    'fetchpriority' => 'high',
-    'decoding' => 'async',
-    'alt' => get_the_title()
-) );
-} else {
-$contact_fv_bg = portfolio_get_image_url( 'fv_background_image', 'full' );
-if ( $contact_fv_bg ) {
-    echo '<img src="' . esc_url( $contact_fv_bg ) . '" alt="Contact Background" class="contact-fv-bg-image" loading="eager" fetchpriority="high" decoding="async">';
-}
-}
-?>
 <div class="contact-fv-overlay"></div>
 </div>
 <div class="contact-fv-content">
@@ -59,7 +42,6 @@ if ( $contact_fv_bg ) {
 	</div>
 </section>
 
-<?php get_template_part( 'template-parts/contact-section' ); ?>
 </div>
 </main>
 
