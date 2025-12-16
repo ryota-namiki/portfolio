@@ -31,9 +31,9 @@ get_header();
     ?>
     <div class="plan-fv-overlay"></div>
   </div>
-  <div class="plan-fv-content">
-    <p class="plan-fv-label">WEBサイト、LP制作をご希望の</p>
-    <h2 class="plan-fv-subtitle">中小企業様へ</h2>
+  <div class="skills-fv-content">
+    <p class="skills-fv-label">WEBサイト、LP制作をご希望の</p>
+    <h2 class="skills-fv-subtitle">中小企業様へ</h2>
   </div>
 </section>
 

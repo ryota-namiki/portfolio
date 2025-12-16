@@ -425,13 +425,19 @@ Main Content Wrapper
   z-index: 2;
   background-color: #ffffff;
   padding-bottom: 80px;
-  margin-top: 34vh;
+  margin-top: 40vh;
   border-radius: 40px 40px 0 0;
 }
 
 /* プロジェクト詳細ページは除外 */
 .main-content-wrapper.project-detail-main-content {
   margin-top: 40vh;
+}
+
+/* プライバシーポリシーページ専用のスタイル */
+.page-template-page-privacy-policy .main-content-wrapper.project-detail-main-content,
+.page-privacy-policy .main-content-wrapper.project-detail-main-content {
+  margin-top: 20vh;
 }
 
 /* ============================================
@@ -448,7 +454,7 @@ Works Section
 
 .section-container {
   max-width: 1030px;
-  padding: 0 16px;
+  padding: 80px 16px 40px;
   margin: 0 auto;
 }
 
@@ -1201,7 +1207,7 @@ Responsive Design
   }
 
   .main-content-wrapper {
-    margin-top: 15vh;
+    margin-top: 20vh;
   }
 
   .site-content {
@@ -1793,25 +1799,14 @@ Project Detail Page
 .project-detail-material {
   width: 100%;
   margin: 0;
-  border-radius: 12px;
-  overflow: hidden;
-  background-color: rgba(255, 255, 255, 0.3);
-  box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.1);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  min-height: 400px;
-  aspect-ratio: 4 / 3;
 }
 
 .project-detail-material-embed {
-  width: 80% !important;
-  max-width: 80% !important;
-  height: 80% !important;
-  max-height: 80% !important;
+  width: 100%;
   margin: 0;
   position: relative;
+  padding-bottom: 78.02%; /* 960/749 aspect ratio for Google Slides */
+  height: 0;
   overflow: hidden;
 }
 
@@ -1824,7 +1819,6 @@ Project Detail Page
   border: none;
   display: block;
   max-width: 100%;
-  border-radius: 6px;
 }
 
 .project-detail-material-embed embed,
@@ -1836,7 +1830,6 @@ Project Detail Page
   height: 100%;
   display: block;
   max-width: 100%;
-  border-radius: 6px;
 }
 
 
@@ -1965,6 +1958,12 @@ Project Detail Page
   .project-detail-main-content {
     margin-top: 28vh;
   }
+
+  /* プライバシーポリシーページ専用 */
+  .page-template-page-privacy-policy .main-content-wrapper.project-detail-main-content,
+  .page-privacy-policy .main-content-wrapper.project-detail-main-content {
+    margin-top: 20vh;
+  }
 }
 
 @media (max-width: 480px) {
@@ -1999,7 +1998,7 @@ Project Detail Page
   .project-detail-fv-content {
     left: 16px;
     right: 16px;
-    top: 40%;
+    top: 50%;
     transform: translateY(-50%);
     text-align: left;
   }
@@ -2025,11 +2024,12 @@ Project Detail Page
   .plan-fv-label {
     font-size: 14px;
     line-height: 20px;
+    margin-bottom: 8px;
   }
 
   .plan-fv-subtitle {
     font-size: 20px;
-    line-height: 36px;
+    line-height: 32px;
   }
 
   .project-detail-fv-title {
@@ -2613,7 +2613,7 @@ Plan Page
   }
 
   .plan-fv-subtitle {
-    font-size: 20px;
+    font-size: 28px;
     line-height: 36px;
   }
 
@@ -3866,5 +3866,274 @@ Contact Page
   .thanks-button {
     width: 100%;
     max-width: 400px;
+  }
+}
+
+/* ============================================
+Privacy Policy Page Styles
+============================================ */
+.privacy-fv-section {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 70vh;
+  overflow: hidden;
+  opacity: 0.7;
+  z-index: 1;
+}
+
+.privacy-fv-background {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--gradient-primary);
+}
+
+.privacy-fv-overlay {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background: linear-gradient(to right, #ffffff, transparent);
+}
+
+.privacy-fv-content {
+  position: absolute;
+  left: 205px;
+  top: 201px;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.privacy-fv-subtitle {
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro", sans-serif;
+  font-size: 34px;
+  font-weight: 700;
+  line-height: 41px;
+  letter-spacing: 0.4px;
+  color: #14212B;
+  text-shadow: 2px 2px 16px rgba(255, 255, 255, 0.5);
+  margin: 0;
+}
+
+.privacy-content-inner {
+  padding: 120px 16px 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+  max-width: 1030px;
+  margin: 0 auto;
+}
+
+.privacy-content-section {
+  width: 100%;
+}
+
+.privacy-content {
+  width: 100%;
+}
+
+.privacy-intro {
+  margin-bottom: 48px;
+}
+
+.privacy-intro-text {
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.8;
+  color: #14212B;
+  margin: 0;
+}
+
+.privacy-sections {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  margin-bottom: 48px;
+}
+
+.privacy-section-item {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.privacy-section-title {
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro", sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.5;
+  color: #14212B;
+  margin: 0;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.privacy-section-number {
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.privacy-section-heading {
+  font-weight: 600;
+}
+
+.privacy-section-text {
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.8;
+  color: #14212B;
+  margin: 0;
+  padding-left: 28px;
+}
+
+.privacy-contact {
+  margin-top: 48px;
+  padding-top: 32px;
+  border-top: 1px solid rgba(20, 33, 43, 0.1);
+}
+
+.privacy-contact-name {
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.8;
+  color: #14212B;
+  margin: 0 0 8px 0;
+}
+
+.privacy-contact-email {
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.8;
+  color: #14212B;
+  margin: 0;
+}
+
+.privacy-contact-email a {
+  color: #156AD1;
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+}
+
+.privacy-contact-email a:hover {
+  opacity: 0.7;
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .privacy-fv-section {
+    height: 400px;
+  }
+
+  .privacy-fv-content {
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+  }
+
+  .privacy-fv-subtitle {
+    font-size: 28px;
+    line-height: 36px;
+  }
+
+  .privacy-content-inner {
+    padding: 60px 16px 0;
+    gap: 40px;
+  }
+
+  .privacy-intro {
+    margin-bottom: 32px;
+  }
+
+  .privacy-sections {
+    gap: 32px;
+    margin-bottom: 32px;
+  }
+
+  .privacy-section-title {
+    font-size: 18px;
+  }
+
+  .privacy-section-text {
+    font-size: 15px;
+    padding-left: 24px;
+  }
+
+  .privacy-contact {
+    margin-top: 32px;
+    padding-top: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .privacy-fv-section {
+    height: 400px;
+  }
+
+  .privacy-fv-content {
+    left: 16px;
+    right: 16px;
+    top: 40%;
+    transform: translateY(-50%);
+    text-align: left;
+  }
+
+  .privacy-fv-subtitle {
+    font-size: 20px;
+    line-height: 28px;
+  }
+
+  .privacy-content-inner {
+    padding: 60px 16px 0;
+    gap: 32px;
+  }
+
+  .privacy-intro {
+    margin-bottom: 24px;
+  }
+
+  .privacy-intro-text {
+    font-size: 15px;
+  }
+
+  .privacy-sections {
+    gap: 24px;
+    margin-bottom: 24px;
+  }
+
+  .privacy-section-item {
+    gap: 12px;
+  }
+
+  .privacy-section-title {
+    font-size: 16px;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .privacy-section-text {
+    font-size: 14px;
+    padding-left: 0;
+    line-height: 1.7;
+  }
+
+  .privacy-contact {
+    margin-top: 24px;
+    padding-top: 20px;
+  }
+
+  .privacy-contact-name,
+  .privacy-contact-email {
+    font-size: 15px;
   }
 }
