@@ -1960,9 +1960,9 @@ Project Detail Page
   }
 
   /* プライバシーポリシーページ専用 */
-  .page-template-page-privacy-policy .main-content-wrapper.project-detail-main-content,
-  .page-privacy-policy .main-content-wrapper.project-detail-main-content {
-    margin-top: 20vh;
+  body.page-template-page-privacy-policy .main-content-wrapper.project-detail-main-content,
+  body.page-privacy-policy .main-content-wrapper.project-detail-main-content {
+    margin-top: 20vh !important;
   }
 }
 

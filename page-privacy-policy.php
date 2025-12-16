@@ -8,7 +8,7 @@
 get_header();
 ?>
 
-<main id="main" class="site-main">
+<main id="main" class="site-main page-template-page-privacy-policy">
   <!-- Privacy Policy Page FV Section -->
   <section class="privacy-fv-section">
       <div class="privacy-fv-background">
