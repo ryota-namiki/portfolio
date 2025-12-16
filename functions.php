@@ -96,6 +96,9 @@ function portfolio_theme_setup() {
   // カスタムロゴのサポート
   add_theme_support( 'custom-logo' );
 
+  // サイトアイコンのサポート（管理画面での設定を有効化）
+  add_theme_support( 'site-icon' );
+
   // 幅の設定
   $GLOBALS['content_width'] = 1030;
 }
@@ -411,6 +414,54 @@ function portfolio_cf7_redirect_script() {
     <?php
   }
 }
+
+/**
+ * WordPressの標準サイトアイコン出力を無効化
+ */
+function portfolio_remove_default_site_icon() {
+  remove_action( 'wp_head', 'wp_site_icon', 99 );
+}
+add_action( 'init', 'portfolio_remove_default_site_icon' );
+
+/**
+ * ファビコンを追加（ハイブリッド方式）
+ * 管理画面で設定したファビコンに加えて、SVGファビコンも追加
+ */
+function portfolio_add_favicons() {
+  $svg_favicon_url = get_template_directory_uri() . '/images/logo.svg';
+  $site_icon_id = get_option( 'site_icon' );
+  
+  // SVGファビコンを最初に追加（対応ブラウザ向け）
+  echo '<link rel="icon" type="image/svg+xml" href="' . esc_url( $svg_favicon_url ) . '">' . "\n";
+  
+  // 管理画面で設定されたサイトアイコンがある場合
+  if ( $site_icon_id ) {
+    // 複数サイズのアイコンを取得
+    $icon_sizes = array( 32, 180, 192, 270, 512 );
+    foreach ( $icon_sizes as $size ) {
+      $icon_url = wp_get_attachment_image_url( $site_icon_id, array( $size, $size ) );
+      if ( $icon_url ) {
+        if ( $size === 180 ) {
+          // Apple Touch Icon
+          echo '<link rel="apple-touch-icon" sizes="' . $size . 'x' . $size . '" href="' . esc_url( $icon_url ) . '">' . "\n";
+        } else {
+          // その他のサイズ
+          echo '<link rel="icon" type="image/png" sizes="' . $size . 'x' . $size . '" href="' . esc_url( $icon_url ) . '">' . "\n";
+        }
+      }
+    }
+    // デフォルトのfavicon（32x32）
+    $default_icon_url = wp_get_attachment_image_url( $site_icon_id, 32 );
+    if ( $default_icon_url ) {
+      echo '<link rel="shortcut icon" href="' . esc_url( $default_icon_url ) . '">' . "\n";
+    }
+  } else {
+    // サイトアイコンが設定されていない場合、SVGをフォールバックとしても使用
+    echo '<link rel="icon" type="image/png" href="' . esc_url( $svg_favicon_url ) . '">' . "\n";
+  }
+}
+// wp_headで出力（優先度99でWordPressの標準出力の後に実行）
+add_action( 'wp_head', 'portfolio_add_favicons', 99 );
 
 add_action( 'wp_enqueue_scripts', 'portfolio_enqueue_styles' );
 add_action( 'wp_footer', 'portfolio_fade_in_script' );
