@@ -434,10 +434,10 @@ Main Content Wrapper
   margin-top: 40vh;
 }
 
-/* プライバシーポリシーページ専用のスタイル */
+/* プライバシーポリシーページ専用のスタイル（デスクトップ） */
 .page-template-page-privacy-policy .main-content-wrapper.project-detail-main-content,
 .page-privacy-policy .main-content-wrapper.project-detail-main-content {
-  margin-top: 20vh;
+  margin-top: 40vh;
 }
 
 /* ============================================
@@ -1959,10 +1959,10 @@ Project Detail Page
     margin-top: 28vh;
   }
 
-  /* プライバシーポリシーページ専用 */
-  body.page-template-page-privacy-policy .main-content-wrapper.project-detail-main-content,
-  body.page-privacy-policy .main-content-wrapper.project-detail-main-content {
-    margin-top: 20vh !important;
+  /* プライバシーポリシーページ専用（SP） */
+  .page-template-page-privacy-policy .main-content-wrapper.project-detail-main-content,
+  .page-privacy-policy .main-content-wrapper.project-detail-main-content {
+    margin-top: 20vh;
   }
 }
 

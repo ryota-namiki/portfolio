@@ -13,7 +13,7 @@ get_header();
   <section class="fv-section">
     <div class="fv-background">
       <video class="fv-bg-video" autoplay muted loop playsinline>
-        <source src="<?php echo esc_url( get_template_directory_uri() . '/images/fv.mp4' ); ?>" type="video/mp4">
+        <source src="<?php echo esc_url( get_template_directory_uri() . '/images/mv.mp4' ); ?>" type="video/mp4">
       </video>
       <div class="fv-overlay"></div>
     </div>
