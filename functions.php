@@ -553,3 +553,52 @@ function portfolio_test_mail() {
 }
 add_action( 'admin_init', 'portfolio_test_mail' );
 
+/**
+ * テーマカスタマイザーに「選ばれる理由」セクションを追加
+ */
+function portfolio_customize_register( $wp_customize ) {
+  // 「選ばれる理由」セクションを追加
+  $wp_customize->add_section( 'why_choose_section', array(
+    'title'       => __( '選ばれる理由', 'portfolio' ),
+    'description' => __( 'TOPページの「選ばれる理由」セクションで使用する画像を設定します。', 'portfolio' ),
+    'priority'    => 25,
+    'capability'  => 'edit_theme_options',
+  ) );
+
+  // 画像1: 中小企業の経営者の方へ
+  $wp_customize->add_setting( 'why_choose_image_1', array(
+    'default'           => '',
+    'sanitize_callback' => 'absint',
+  ) );
+
+  $wp_customize->add_control( new WP_Customize_Media_Control( $wp_customize, 'why_choose_image_1', array(
+    'label'       => __( '画像 01: 中小企業の経営者の方へ', 'portfolio' ),
+    'section'     => 'why_choose_section',
+    'mime_type'   => 'image',
+  ) ) );
+
+  // 画像2: 対話から生まれるデザイン
+  $wp_customize->add_setting( 'why_choose_image_2', array(
+    'default'           => '',
+    'sanitize_callback' => 'absint',
+  ) );
+
+  $wp_customize->add_control( new WP_Customize_Media_Control( $wp_customize, 'why_choose_image_2', array(
+    'label'       => __( '画像 02: 対話から生まれるデザイン', 'portfolio' ),
+    'section'     => 'why_choose_section',
+    'mime_type'   => 'image',
+  ) ) );
+
+  // 画像3: 感性で魅せる、デザインの幅
+  $wp_customize->add_setting( 'why_choose_image_3', array(
+    'default'           => '',
+    'sanitize_callback' => 'absint',
+  ) );
+
+  $wp_customize->add_control( new WP_Customize_Media_Control( $wp_customize, 'why_choose_image_3', array(
+    'label'       => __( '画像 03: 感性で魅せる、デザインの幅', 'portfolio' ),
+    'section'     => 'why_choose_section',
+    'mime_type'   => 'image',
+  ) ) );
+}
+add_action( 'customize_register', 'portfolio_customize_register' );

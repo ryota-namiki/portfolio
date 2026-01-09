@@ -237,7 +237,7 @@ $project_tags = get_field( 'タグ' ); // 複数選択フィールドまたは�
                       'loading' => 'lazy',
                       'decoding' => 'async',
                       'alt' => $project_image_1['alt'] ?: get_the_title(),
-                      'style' => 'width: 80% !important; height: 80% !important; object-fit: contain;'
+                      'style' => 'object-fit: contain;'
                     ) );
                   } else {
                     echo wp_get_attachment_image( $project_image_1, 'large', false, array(
@@ -245,7 +245,7 @@ $project_tags = get_field( 'タグ' ); // 複数選択フィールドまたは�
                       'loading' => 'lazy',
                       'decoding' => 'async',
                       'alt' => get_the_title(),
-                      'style' => 'width: 80% !important; height: 80% !important; object-fit: contain;'
+                      'style' => 'object-fit: contain;'
                     ) );
                   }
                   ?>
@@ -261,7 +261,7 @@ $project_tags = get_field( 'タグ' ); // 複数選択フィールドまたは�
                       'loading' => 'lazy',
                       'decoding' => 'async',
                       'alt' => $project_image_2['alt'] ?: get_the_title(),
-                      'style' => 'width: 80% !important; height: 80% !important; object-fit: contain;'
+                      'style' => 'object-fit: contain;'
                     ) );
                   } else {
                     echo wp_get_attachment_image( $project_image_2, 'large', false, array(
@@ -269,7 +269,7 @@ $project_tags = get_field( 'タグ' ); // 複数選択フィールドまたは�
                       'loading' => 'lazy',
                       'decoding' => 'async',
                       'alt' => get_the_title(),
-                      'style' => 'width: 80% !important; height: 80% !important; object-fit: contain;'
+                      'style' => 'object-fit: contain;'
                     ) );
                   }
                   ?>
