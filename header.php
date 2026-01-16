@@ -34,8 +34,11 @@
         <div class="site-branding">
           <h1 class="site-title">
             <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-              <img src="<?php echo esc_url( get_template_directory_uri() . '/images/logo-t.svg' ); ?>" alt="<?php bloginfo( 'name' ); ?>" class="site-logo site-logo-desktop">
-              <img src="<?php echo esc_url( get_template_directory_uri() . '/images/logo.svg' ); ?>" alt="<?php bloginfo( 'name' ); ?>" class="site-logo site-logo-mobile">
+              <div class="site-branding-inner">
+                <img src="<?php echo esc_url( get_template_directory_uri() . '/images/logo-t.svg' ); ?>" alt="<?php bloginfo( 'name' ); ?>" class="site-logo site-logo-desktop">
+                <img src="<?php echo esc_url( get_template_directory_uri() . '/images/logo.svg' ); ?>" alt="<?php bloginfo( 'name' ); ?>" class="site-logo site-logo-mobile">
+                <span class="site-name">Ryota Namiki</span>
+              </div>
             </a>
           </h1>
         </div>

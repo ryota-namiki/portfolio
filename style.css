@@ -157,6 +157,12 @@ Header & Navigation
   height: 100%;
 }
 
+.site-branding-inner {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
 .site-logo {
   height: 44px;
   width: auto;
@@ -165,6 +171,16 @@ Header & Navigation
 
 .site-logo-mobile {
   display: none;
+}
+
+.site-name {
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro", sans-serif;
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 28px;
+  letter-spacing: -0.26px;
+  color: #14212B;
+  white-space: nowrap;
 }
 
 .navbar-actions {
