@@ -563,9 +563,7 @@ function portfolio_customize_register( $wp_customize ) {
     'description' => __( 'TOPページの「選ばれる理由」セクションで使用する画像を設定します。', 'portfolio' ),
     'priority'    => 25,
     'capability'  => 'edit_theme_options',
-  ) );
-
-  // 画像1: 中小企業の経営者の方へ
+  ) );  // 画像1: 中小企業の経営者の方へ
   $wp_customize->add_setting( 'why_choose_image_1', array(
     'default'           => '',
     'sanitize_callback' => 'absint',
@@ -602,3 +600,49 @@ function portfolio_customize_register( $wp_customize ) {
   ) ) );
 }
 add_action( 'customize_register', 'portfolio_customize_register' );
+
+/**
+ * /projects で project を表示（project2 用）
+ * - 参照元: カスタム投稿タイプ project（管理画面の Projects）
+ * - /projects/ → プロジェクト一覧（アーカイブ）
+ * - /projects/{slug}/ → 個別プロジェクトを single-project2.php で表示
+ */
+function portfolio_register_project2_routes() {
+  // /projects/ → project アーカイブ（一覧）
+  add_rewrite_rule(
+    '^projects/?$',
+    'index.php?post_type=project',
+    'top'
+  );
+  // /projects/{slug}/ → project の single（project2 テンプレート）
+  add_rewrite_rule(
+    '^projects/([^/]+)/?$',
+    'index.php?post_type=project&name=$matches[1]&project2=1',
+    'top'
+  );
+}
+add_action( 'init', 'portfolio_register_project2_routes' );
+
+function portfolio_register_project2_query_vars( $vars ) {
+  $vars[] = 'project2';
+  return $vars;
+}
+add_filter( 'query_vars', 'portfolio_register_project2_query_vars' );
+
+function portfolio_project2_template_include( $template ) {
+  if ( is_singular( 'project' ) && (int) get_query_var( 'project2' ) === 1 ) {
+    $t = get_template_directory() . '/single-project2.php';
+    if ( file_exists( $t ) ) {
+      return $t;
+    }
+  }
+  return $template;
+}
+add_filter( 'template_include', 'portfolio_project2_template_include', 99 );
+
+// テーマ切り替え時にリライトルールを反映
+function portfolio_flush_rewrite_rules_on_switch() {
+  portfolio_register_project2_routes();
+  flush_rewrite_rules();
+}
+add_action( 'after_switch_theme', 'portfolio_flush_rewrite_rules_on_switch' );
