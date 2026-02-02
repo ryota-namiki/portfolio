@@ -621,16 +621,41 @@ function portfolio_register_project2_routes() {
     'top'
   );
 }
-add_action( 'init', 'portfolio_register_project2_routes' );
-
-function portfolio_register_project2_query_vars( $vars ) {
+add_action( 'init', 'portfolio_register_project2_routes' );function portfolio_register_project2_query_vars( $vars ) {
   $vars[] = 'project2';
   return $vars;
 }
 add_filter( 'query_vars', 'portfolio_register_project2_query_vars' );
 
 function portfolio_project2_template_include( $template ) {
-  if ( is_singular( 'project' ) && (int) get_query_var( 'project2' ) === 1 ) {
+  global $wp;
+
+  // WordPress が解決したリクエストパスで判定
+  $request = isset( $wp->request ) ? (string) $wp->request : '';
+  $is_projects2_archive = ( $request === 'projects' );
+  $is_projects2_single  = ( strpos( $request, 'projects/' ) === 0 );
+
+  // フォールバック: 一部サーバーで $wp->request が期待と違う場合（URL パスで判定）
+  if ( ! $is_projects2_archive && ! $is_projects2_single && isset( $_SERVER['REQUEST_URI'] ) ) {
+    $path = (string) parse_url( $_SERVER['REQUEST_URI'], PHP_URL_PATH );
+    $home_path = (string) parse_url( home_url( '/' ), PHP_URL_PATH );
+    $relative = ( $home_path !== '' && strpos( $path, $home_path ) === 0 )
+      ? trim( substr( $path, strlen( $home_path ) ), '/' )
+      : trim( $path, '/' );
+    if ( $relative === 'projects' ) {
+      $is_projects2_archive = true;
+    } elseif ( strpos( $relative, 'projects/' ) === 0 ) {
+      $is_projects2_single = true;
+    }
+  }
+
+  // /projects/（一覧）は archive-project2.php を使用
+  if ( is_post_type_archive( 'project' ) && $is_projects2_archive ) {
+    $t = get_template_directory() . '/archive-project2.php';
+    if ( file_exists( $t ) ) {
+      return $t;
+    }
+  }  if ( is_singular( 'project' ) && ( (int) get_query_var( 'project2' ) === 1 || $is_projects2_single ) ) {
     $t = get_template_directory() . '/single-project2.php';
     if ( file_exists( $t ) ) {
       return $t;
@@ -639,6 +664,30 @@ function portfolio_project2_template_include( $template ) {
   return $template;
 }
 add_filter( 'template_include', 'portfolio_project2_template_include', 99 );
+
+/**
+ * /projects/{slug}/ を /project/{slug}/ へ正規化リダイレクトさせない
+ * （project2 のヘッダー/フッターに切り替えるため）
+ */
+function portfolio_disable_canonical_for_projects2( $redirect_url, $requested_url ) {
+  global $wp;
+  $request = isset( $wp->request ) ? (string) $wp->request : '';
+  if ( strpos( $request, 'projects/' ) === 0 ) {
+    return false;
+  }
+  if ( isset( $_SERVER['REQUEST_URI'] ) ) {
+    $path = (string) parse_url( $_SERVER['REQUEST_URI'], PHP_URL_PATH );
+    $home_path = (string) parse_url( home_url( '/' ), PHP_URL_PATH );
+    $relative = ( $home_path !== '' && strpos( $path, $home_path ) === 0 )
+      ? trim( substr( $path, strlen( $home_path ) ), '/' )
+      : trim( $path, '/' );
+    if ( strpos( $relative, 'projects/' ) === 0 ) {
+      return false;
+    }
+  }
+  return $redirect_url;
+}
+add_filter( 'redirect_canonical', 'portfolio_disable_canonical_for_projects2', 10, 2 );
 
 // テーマ切り替え時にリライトルールを反映
 function portfolio_flush_rewrite_rules_on_switch() {

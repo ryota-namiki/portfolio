@@ -1,14 +1,18 @@
 <?php
 /**
  * Template Name: Projects Page
- * The template for /projects (same layout as single project)
+ * /projects/{slug}/ 専用（header2, footer2、お問い合わせセクションなし）
+ * /project/{slug}/ は single-project.php のまま変更なし
  *
  * @package Portfolio
  */
 
-get_header();
-
-// ページテンプレート用: メインクエリの投稿をセット
+// project2 用：header2.php / footer2.php を使用（お問い合わせセクションなし）
+locate_template( array( 'header2.php' ), true, true );
+?>
+<!-- single-project2 -->
+<?php
+// メインクエリの投稿をセット
 if ( have_posts() ) {
   the_post();
 }
@@ -293,8 +297,8 @@ $project_tags = get_field( 'タグ' ); // 複数選択フィールドまたは�
             <p class="project-detail-note"><?php echo esc_html( $project_annotation ); ?></p>
           <?php endif; ?>
 
-          <!-- Back Button -->
-          <a href="<?php echo esc_url( get_post_type_archive_link( 'project' ) ); ?>" class="cta-button cta-button-back">
+          <!-- Back Button（project2 用：/projects/ へ） -->
+          <a href="<?php echo esc_url( home_url( '/projects/' ) ); ?>" class="cta-button cta-button-back">
             <svg class="icon-arrow icon-arrow-left" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
@@ -303,11 +307,9 @@ $project_tags = get_field( 'タグ' ); // 複数選択フィールドまたは�
         </div>
       </section>
     <?php endif; ?>
-
-    <?php get_template_part( 'template-parts/contact-section' ); ?>
     </div>
   </div>
 </main>
 
 <?php
-get_footer();
+locate_template( array( 'footer2.php' ), true, true );
