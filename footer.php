@@ -64,7 +64,7 @@
         </div>
       </div>
       <div class="footer-copyright">
-        <p>&copy; 2025 RNStyle</p>
+        <p>&copy; 2026 RNStyle</p>
       </div>
     </div>
   </footer>

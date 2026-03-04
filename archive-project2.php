@@ -66,7 +66,7 @@ locate_template( array( 'header2.php' ), true, true );
               $project_caption = get_field( 'キャプション' );
               ?>
               <article class="archive-project-card fade-in">
-                <a href="<?php echo esc_url( home_url( '/projects/' . get_post_field( 'post_name', get_the_ID() ) . '/' ) ); ?>" class="archive-project-link">
+                <a href="<?php echo esc_url( portfolio_get_project_list_link( null, true ) ); ?>" class="archive-project-link"<?php echo portfolio_project_list_link_is_external() ? ' target="_blank" rel="noopener noreferrer"' : ''; ?>>
                   <div class="archive-project-image">
                     <?php
                     if ( has_post_thumbnail() ) {

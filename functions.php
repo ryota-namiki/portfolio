@@ -602,6 +602,39 @@ function portfolio_customize_register( $wp_customize ) {
 add_action( 'customize_register', 'portfolio_customize_register' );
 
 /**
+ * プロジェクト一覧でのリンクURLを返す（特定スラッグは外部URLに差し替え）
+ *
+ * @param WP_Post|int|null $post 投稿オブジェクトまたはID。null のときはループ内の投稿
+ * @param bool             $use_projects_base true のとき /projects/{slug}/ 形式で返す（project2 一覧用）
+ * @return string
+ */
+function portfolio_get_project_list_link( $post = null, $use_projects_base = false ) {
+  $post = get_post( $post );
+  if ( ! $post || $post->post_type !== 'project' ) {
+    return $use_projects_base ? home_url( '/projects/' ) : home_url( '/' );
+  }
+  $slug = $post->post_name;
+  if ( $slug === 'shopping-app' ) {
+    return 'https://www.figma.com/proto/BLNG2cPtFKoDUO3U5vsCAe/Payke%E3%82%A2%E3%83%97%E3%83%AA-%E3%83%AA%E3%83%8B%E3%83%A5%E3%83%BC%E3%82%A2%E3%83%AB%E6%A1%88%E4%BB%B6?page-id=0%3A1&node-id=1-38&viewport=60%2C420%2C0.21&t=ZDZd8JfUAtMEvWxD-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=1%3A38';
+  }
+  if ( $use_projects_base ) {
+    return home_url( '/projects/' . $slug . '/' );
+  }
+  return get_permalink( $post );
+}
+
+/**
+ * プロジェクト一覧で外部リンク（別タブ）かどうかを返す
+ *
+ * @param WP_Post|int|null $post 投稿オブジェクトまたはID
+ * @return bool
+ */
+function portfolio_project_list_link_is_external( $post = null ) {
+  $post = get_post( $post );
+  return $post && $post->post_type === 'project' && $post->post_name === 'shopping-app';
+}
+
+/**
  * /projects で project を表示（project2 用）
  * - 参照元: カスタム投稿タイプ project（管理画面の Projects）
  * - /projects/ → プロジェクト一覧（アーカイブ）
@@ -687,9 +720,7 @@ function portfolio_disable_canonical_for_projects2( $redirect_url, $requested_ur
   }
   return $redirect_url;
 }
-add_filter( 'redirect_canonical', 'portfolio_disable_canonical_for_projects2', 10, 2 );
-
-// テーマ切り替え時にリライトルールを反映
+add_filter( 'redirect_canonical', 'portfolio_disable_canonical_for_projects2', 10, 2 );// テーマ切り替え時にリライトルールを反映
 function portfolio_flush_rewrite_rules_on_switch() {
   portfolio_register_project2_routes();
   flush_rewrite_rules();

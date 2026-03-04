@@ -61,7 +61,7 @@ get_header();
             $project_caption = get_field( 'キャプション' );
             ?>
             <article class="project-card fade-in">
-              <a href="<?php the_permalink(); ?>" class="project-link">
+              <a href="<?php echo esc_url( portfolio_get_project_list_link() ); ?>" class="project-link"<?php echo portfolio_project_list_link_is_external() ? ' target="_blank" rel="noopener noreferrer"' : ''; ?>>
                 <div class="project-image">
                   <?php
                   if ( has_post_thumbnail() ) {
