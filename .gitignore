@@ -1,0 +1,8 @@
+# macOS
+.DS_Store
+
+# バックアップ・手動用ドキュメント
+WP_Portfolio_Backup.zip
+*本番復元マニュアル*.txt
+*段階認証リカバリーコード*.txt
+*段階認証リカバリーコード*.txt
